@@ -29,7 +29,7 @@
     - [September](https://github.com/phantom0803/ophim-september)
 
 # Installation:
-1. CD to project root and run: `composer require hacoidev/ophim-core -W`
+1. CD to project root and run: `composer require tannhatcms/ophim-core -W`
 2. Configuration your database connection information in file `.env`
 3. Then, run command: `php artisan ophim:install`
 4. Change app\Models\User:
@@ -52,7 +52,7 @@ Route::get('/', function () {
 7. Run `php artisan optimize:clear`
 
 # Update:
-1. CD to project root and run: `composer update hacoidev/ophim-core -W`
+1. CD to project root and run: `composer update tannhatcms/ophim-core -W`
 2. Then, run command: `php artisan ophim:install`
 3. Run `php artisan optimize:clear`
 4. Clear PHP Opcache in server (if enabled)
