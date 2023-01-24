@@ -13,7 +13,7 @@
 - Free Movies Data: [OPhim1.CC](https://ophim1.cc)
 
 - Add-on:
-    - [OPhim Crawler](https://github.com/hacoidev/ophim-crawler)
+    - [OPhim Crawler](https://github.com/tannhatcms/ophim-crawler)
 - Theme:
     - [XIAO (New)](https://github.com/phantom0803/ophim-theme-xiao)
     - [PMC (New)](https://github.com/phantom0803/ophim-theme-pmc)
