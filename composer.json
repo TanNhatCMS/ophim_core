@@ -1,5 +1,5 @@
 {
-    "name": "hacoidev/ophim-core",
+    "name": "tannhatcms/ophim-core",
     "description": "Ophim's core features",
     "type": "library",
     "authors": [
@@ -16,7 +16,8 @@
         "hacoidev/settings": "^1.0.0",
         "hacoidev/permissionmanager": "^1.0.0",
         "spatie/laravel-sitemap": "^5.8",
-        "artesaos/seotools": "^v0.22.1"
+        "artesaos/seotools": "^v0.22.1",
+        "tannhatcms/theme-8anime": "*"
     },
     "license": "MIT",
     "autoload": {
