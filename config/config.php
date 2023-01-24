@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'version' => explode('@', \PackageVersions\Versions::getVersion('hacoidev/ophim-core') ?? 0)[0],
+    'version' => explode('@', \PackageVersions\Versions::getVersion('tannhatcms/ophim-core') ?? 0)[0],
     'episodes' => [
         'types' => [
             'embed' => 'Nhúng',
