@@ -20,7 +20,7 @@
         "tannhatcms/theme-8anime": "*"
     },
     "replace": {
-        "hacoidev/ophim-core":"*"
+        "hacoidev/ophim-core":"1.*"
     },
     "license": "MIT",
     "autoload": {
