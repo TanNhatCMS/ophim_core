@@ -147,7 +147,7 @@ class OphimServiceProvider extends ServiceProvider
         config(['backpack.base.project_logo' => '<b>8anime</b>CMS']);
         config(['backpack.base.developer_name' => '8anime']);
         config(['backpack.base.developer_link' => 'https://8anime.net']);
-        config(['backpack.base.show_powered_by' => true]);
+        config(['backpack.base.show_powered_by' => false]);
     }
 
     protected function mergeCkfinderConfigs()
