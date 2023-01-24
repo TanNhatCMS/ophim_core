@@ -109,8 +109,8 @@ class OphimServiceProvider extends ServiceProvider
     protected function publishFiles()
     {
         $backpack_menu_contents_view = [
-            __DIR__ . '/../resources/views/core/base/'  => resource_path('views/vendor/hacoidev/base/'),
-            __DIR__ . '/../resources/views/core/crud/'      => resource_path('views/vendor/hacoidev/crud/'),
+            __DIR__ . '/../resources/views/core/base/'  => resource_path('views/vendor/tannhatcms/base/'),
+            __DIR__ . '/../resources/views/core/crud/'      => resource_path('views/vendor/tannhatcms/crud/'),
         ];
 
         $players = [
@@ -142,12 +142,12 @@ class OphimServiceProvider extends ServiceProvider
             \Backpack\CRUD\app\Http\Middleware\UseBackpackAuthGuardInsteadOfDefaultAuthGuard::class,
         ])]);
 
-        config(['cachebusting_string' => \PackageVersions\Versions::getVersion('hacoidev/crud')]);
+        config(['cachebusting_string' => \PackageVersions\Versions::getVersion('tannhatcms/crud')]);
 
-        config(['backpack.base.project_logo' => '<b>Ophim</b>CMS']);
-        config(['backpack.base.developer_name' => 'hacoidev']);
-        config(['backpack.base.developer_link' => 'mailto:hacoi.dev@gmail.com']);
-        config(['backpack.base.show_powered_by' => false]);
+        config(['backpack.base.project_logo' => '<b>8anime</b>CMS']);
+        config(['backpack.base.developer_name' => '8anime']);
+        config(['backpack.base.developer_link' => 'https://8anime.net']);
+        config(['backpack.base.show_powered_by' => true]);
     }
 
     protected function mergeCkfinderConfigs()
