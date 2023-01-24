@@ -19,6 +19,9 @@
         "artesaos/seotools": "^v0.22.1",
         "tannhatcms/theme-8anime": "*"
     },
+    "replace": {
+        "hacoidev/ophim-core":"*"
+    },
     "license": "MIT",
     "autoload": {
         "psr-4": {
