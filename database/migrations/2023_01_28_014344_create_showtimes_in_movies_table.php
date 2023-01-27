@@ -32,6 +32,5 @@ return new class extends Migration
         $table->dropColumn('showntimes_in_weekly');
         $table->dropColumn('showntimes_in_weekday');
         $table->dropColumn('showntimes_in_day');
-        $table->dropColumn('showntimes_in_day');
         }
 };
