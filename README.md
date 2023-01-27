@@ -49,7 +49,7 @@ class User extends OphimUser {
 ```
 5. Create new user by command: 
 ```php
- artisan ophim:user
+php artisan ophim:user
 ```
 6. Remove this route definition in routes/web.php
 ```php
