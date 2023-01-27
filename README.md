@@ -36,7 +36,7 @@
 2. Configuration your database connection information in file `.env`
 3. Then, run command: 
 ```php
- artisan ophim:install
+php artisan ophim:install
 ```
 4. Change app\Models\User:
 ```php
@@ -59,7 +59,7 @@ Route::get('/', function () {
 ```
 7. Run 
 ```php
- artisan optimize:clear
+php artisan optimize:clear
 ```
 # Update:
 1. CD to project root and run: 
@@ -68,11 +68,11 @@ Route::get('/', function () {
 ```
 2. Then, run command: 
 ```php
- artisan ophim:install
+php artisan ophim:install
 ```
 3. Run 
 ```php
- artisan optimize:clear
+php artisan optimize:clear
 ```
 4. Clear PHP Opcache in server (if enabled)
 
