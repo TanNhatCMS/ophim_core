@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^6|^7|^8",
+        "laravel/framework": "^6|^7|^8|^9",
         "ckfinder/ckfinder-laravel-package": "v3.5.2.1",
         "tannhatcms/laravel-caching-model": "^1.0.0",
         "tannhatcms/crud": "^1.0.0",
@@ -17,7 +17,6 @@
         "tannhatcms/permissionmanager": "^1.0.0",
         "spatie/laravel-sitemap": "^5.8",
         "artesaos/seotools": "^v0.22.1",
-        "tannhatcms/theme-8anime": "*",
         "tannhatcms/ophim-crawler": "*"
     },
     "replace": {
