@@ -14,11 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->dropColumn('showntimes_in_weekly');
-            $table->dropColumn('showntimes_in_weekday');
-            $table->dropColumn('showntimes_in_day');
+            $table->boolean('is_shown_in_weekly')->default(false);
             $table->string('showntimes_in_weekly', 5)->nullable();
-            $table->boolean('showntimes_in_weekday',1)->default(1);
+            $table->boolean('showntimes_in_weekday',1)->default(0);
             $table->string('showntimes_in_day', 20)->nullable();
         });
     }
@@ -30,9 +28,11 @@ return new class extends Migration
      */
     public function down()
     {
-        $table->dropColumn('is_shown_in_weekly');
-        $table->dropColumn('showntimes_in_weekly');
-        $table->dropColumn('showntimes_in_weekday');
-        $table->dropColumn('showntimes_in_day');
+        Schema::table('movies', function (Blueprint $table) {
+            $table->dropColumn('is_shown_in_weekly');
+            $table->dropColumn('showntimes_in_weekly');
+            $table->dropColumn('showntimes_in_weekday');
+            $table->dropColumn('showntimes_in_day');
+        });
     }
 };
