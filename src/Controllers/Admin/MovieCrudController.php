@@ -166,7 +166,17 @@ class MovieCrudController extends CrudController
                 $this->crud->addClause('where', 'is_shown_in_theater', true);
             }
         );
-
+        $this->crud->addFilter(
+            [
+                'type'  => 'simple',
+                'name'  => 'is_shown_in_weekly',
+                'label' => 'Lịch chiếu phim'
+            ],
+            false,
+            function () {
+                $this->crud->addClause('where', 'is_shown_in_weekly', true);
+            }
+        );
         CRUD::addButtonFromModelFunction('line', 'open_view', 'openView', 'beginning');
 
         CRUD::addColumn([
@@ -271,10 +281,36 @@ class MovieCrudController extends CrudController
             'tab' => 'Danh sách tập phim'
         ],);
         
-        CRUD::addField(['name' => 'is_shown_in_weekly', 'label' => 'Hiện phim trong lịch chiếu', 'type' => 'boolean', 'tab' => 'Lịch chiếu']);
-        CRUD::addField(['name' => 'showntimes_in_weekday', 'label' => 'Ngày chiếu phim hằng tuần', 'type' => 'text', 'attributes' => ['placeholder' => 'định dạng số: 0 = hằng ngày;1= Chủ nhật;2-7=Thứ 2-7'], 'tab' => 'Lịch chiếu']);
-        CRUD::addField(['name' => 'showntimes_in_weekly', 'label' => 'Ngày bắt đầu chiếu phim', 'type' => 'text', 'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 'tab' => 'Lịch chiếu']);
-        CRUD::addField(['name' => 'showntimes_in_day', 'label' => 'Thời gian đầu chiếu phim', 'type' => 'text', 'attributes' => ['placeholder' => 'định dạng giờ: hh:mm'], 'tab' => 'Lịch chiếu']);
+        CRUD::addField([
+            'name' => 'is_shown_in_weekly',
+            'label' => 'Hiện phim trong lịch chiếu', 
+            'type' => 'boolean', 
+            'default' => false,
+            'tab' => 'Lịch chiếu'
+        ]);
+        CRUD::addField([
+            'name' => 'showntimes_in_weekday', 
+            'label' => 'Ngày chiếu phim hằng tuần', 
+            'type' => 'text', 
+            'default' => 0,
+            'attributes' => ['placeholder' => 'định dạng số: 0 = hằng ngày;1= Chủ nhật;2-7=Thứ 2-7'], 
+            'tab' => 'Lịch chiếu'
+        ]);
+        CRUD::addField([
+            'name' => 'showntimes_in_weekly',
+            'label' => 'Ngày bắt đầu chiếu phim',
+            'default' => '',
+            'type' => 'text', 'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
+            'tab' => 'Lịch chiếu'
+        ]);
+        CRUD::addField([
+            'name' => 'showntimes_in_day', 
+            'label' => 'Thời gian đầu chiếu phim', 
+            'type' => 'text', 
+            'default' => '00:00',
+            'attributes' => ['placeholder' => 'định dạng giờ: hh:mm'], 
+            'tab' => 'Lịch chiếu'
+        ]);
 
         CRUD::addField(['name' => 'update_handler', 'label' => 'Trình cập nhật', 'type' => 'select_from_array', 'options' => collect(config('ophim.updaters', []))->pluck('name', 'handler')->toArray(), 'tab' => 'Cập nhật']);
         CRUD::addField(['name' => 'update_identity', 'label' => 'ID cập nhật', 'type' => 'text', 'tab' => 'Cập nhật']);
