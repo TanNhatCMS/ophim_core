@@ -6,8 +6,11 @@
     <div
         class="dropdown-menu {{ config('backpack.base.html_direction') == 'rtl' ? 'dropdown-menu-left' : 'dropdown-menu-right' }} mr-4 pb-1 pt-1">
         <a class="dropdown-item" href="{{ backpack_url('quick-action/delete-cache') }}">
-            Delete All Cache
+            Xoá tất cả Cache
         </a>
         <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ backpack_url('quick-action/delete-opcache') }}">
+            Xoá OpCache
+        </a>
     </div>
 </li>

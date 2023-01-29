@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Prologue\Alerts\Facades\Alert;
 
+
 class QuickActionController extends Controller
 {
     /**
@@ -18,6 +19,17 @@ class QuickActionController extends Controller
     {
         Artisan::call('optimize:clear');
         Alert::success("Xóa cache thành công")->flash();
+        return back();
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete_opcache()
+    {
+        Artisan::call('opcache:clear');
+        Alert::success("Xóa opcache thành công")->flash();
         return back();
     }
 }

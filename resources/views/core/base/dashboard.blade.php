@@ -5,14 +5,12 @@
         [
             'type' => 'alert',
             'class' => 'alert alert-dark mb-2 col-12',
-            'heading' => 'OPhimCMS - Tạo website xem phim miễn phí vĩnh viễn',
+            'heading' => '8Anime.net',
             'content' =>
                 '
                 Phiên bản: <span class="text-danger text-break">' .
                 config('ophim.version') .
-                '</span><br/>
-                Trang chủ: <a href="https://ophimcms.com">OPhimCMS.Com</a><br/>
-                Dữ liệu phim miễn phí: <a href="https://ophim5.cc">Ổ Phim</a>
+                '</span>
             ',
             'close_button' => true, // show close button or not
         ],
@@ -123,7 +121,7 @@
             <div class="card-counter success">
                 <i class="las la-user"></i>
                 <span class="count-numbers counter">{{ $count_users }}</span>
-                <span class="count-name">Users</span>
+                <span class="count-name">Người dùng</span>
             </div>
         </div>
 

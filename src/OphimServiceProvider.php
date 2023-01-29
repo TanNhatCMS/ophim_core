@@ -99,6 +99,7 @@ class OphimServiceProvider extends ServiceProvider
 
         $this->commands([
             InstallCommand::class,
+            UpdateCommand::class,
             CreateUser::class,
             GenerateMenuCommand::class,
         ]);
@@ -144,8 +145,8 @@ class OphimServiceProvider extends ServiceProvider
 
         config(['cachebusting_string' => \PackageVersions\Versions::getVersion('tannhatcms/crud')]);
 
-        config(['backpack.base.project_logo' => '<b>8anime</b>CMS']);
-        config(['backpack.base.developer_name' => '8anime']);
+        config(['backpack.base.project_logo' => '<b>8Anime</b>']);
+        config(['backpack.base.developer_name' => '8Anime']);
         config(['backpack.base.developer_link' => 'https://8anime.net']);
         config(['backpack.base.show_powered_by' => false]);
     }
