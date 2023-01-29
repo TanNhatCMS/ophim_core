@@ -302,14 +302,28 @@ class MovieCrudController extends CrudController
         CRUD::addField([
             'name' => 'is_shown_in_weekly',
             'label' => 'Hiện phim trong lịch chiếu', 
-            'type' => 'boolean', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕',
             'default' => false,
             'tab' => 'Lịch chiếu'
         ]);
         CRUD::addField([
             'name' => 'showntimes_in_weekday', 
             'label' => 'Ngày chiếu phim hằng tuần', 
-            'type' => 'text', 
+            'type' => 'radio', 
+            'options'     => [
+                0 => 'Hằng ngày',
+                1 => 'Chủ Nhật',
+                2 => 'Thứ 2',
+                3 => 'Thứ 3',
+                4 => 'Thứ 4',
+                5 => 'Thứ 5',
+                6 => 'Thứ 6',
+                7 => 'Thứ 7'
+            ],
+            'inline'      => true,
             'default' => 0,
             'attributes' => ['placeholder' => 'định dạng số: 0 = hằng ngày;1= Chủ nhật;2-7=Thứ 2-7'], 
             'tab' => 'Lịch chiếu'
@@ -318,13 +332,16 @@ class MovieCrudController extends CrudController
             'name' => 'showntimes_in_day',
             'label' => 'Ngày bắt đầu chiếu phim',
             'default' => '',
-            'type' => 'text', 'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
+            'type' => 'date',
+            'format' => 'DD/MM/YYYY',
+            'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
             'tab' => 'Lịch chiếu'
         ]);
         CRUD::addField([
             'name' => 'showntimes_in_weekly', 
             'label' => 'Thời gian đầu chiếu phim', 
-            'type' => 'text', 
+            'type' => 'time', 
+            'format' => 'HH:mm',
             'default' => '00:00',
             'attributes' => ['placeholder' => 'định dạng giờ: hh:mm'], 
             'tab' => 'Lịch chiếu'
