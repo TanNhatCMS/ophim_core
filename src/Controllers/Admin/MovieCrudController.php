@@ -143,7 +143,7 @@ class MovieCrudController extends CrudController
             }
         });
         $this->crud->addFilter([
-            'name'  => 'type',
+            'name'  => 'showntimes_in_weekday',
             'type'  => 'select2',
             'label' => 'Ngày chiếu phim'
         ], function () {
