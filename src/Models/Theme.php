@@ -59,7 +59,7 @@ class Theme extends Model implements Cacheable
 
     public function editBtn($crud = false)
     {
-        return '<a href="' . backpack_url("theme/{$this->id}/edit") . '" class="btn btn-primary">Edit</a>';
+        return '<a href="' . backpack_url("theme/{$this->id}/edit") . '" class="btn btn-primary">Cài đặt</a>';
     }
 
     public function activeBtn($crud = false)
@@ -76,10 +76,10 @@ class Theme extends Model implements Cacheable
         $html = str_replace("{display_name}", $this->display_name, $html);
 
         if ($this->active) {
-            $html = str_replace("{name}", 'Re-Activate', $html);
+            $html = str_replace("{name}", 'Kích hoạt lại', $html);
             $html = str_replace("{btnType}", 'btn-secondary', $html);
         } else {
-            $html = str_replace("{name}", 'Activate', $html);
+            $html = str_replace("{name}", 'Kích hoạt', $html);
             $html = str_replace("{btnType}", 'btn-primary', $html);
         }
 
@@ -99,7 +99,7 @@ class Theme extends Model implements Cacheable
         $html = str_replace("{actionRoute}", backpack_url("theme/{$this->id}/reset"), $template);
         $html = str_replace("{csrfField}", csrf_field(), $html);
         $html = str_replace("{btnType}", 'btn-warning', $html);
-        $html = str_replace("{name}", 'Reset', $html);
+        $html = str_replace("{name}", 'Đặt về mặc định', $html);
 
         return $html;
     }

@@ -71,8 +71,9 @@ class EpisodeCrudController extends CrudController
             }
         ]);
         CRUD::addColumn(['name' => 'name', 'label' => 'Tập', 'type' => 'text']);
-        CRUD::addColumn(['name' => 'type', 'label' => 'Type', 'type' => 'text']);
+        CRUD::addColumn(['name' => 'type', 'label' => 'Loại', 'type' => 'text']);
         CRUD::addColumn(['name' => 'link', 'label' => 'Link', 'type' => 'textarea']);
+        CRUD::addColumn(['name' => 'report_message', 'label' => 'Tin nhắn báo cáo', 'type' => 'textarea']);
     }
 
     /**
@@ -97,10 +98,10 @@ class EpisodeCrudController extends CrudController
         $this->authorize('update', $this->crud->getEntryWithLocale($this->crud->getCurrentEntryId()));
 
 
-        CRUD::addField(['name' => 'type', 'label' => 'Type', 'type' => 'select_from_array', 'options' => config('ophim.episodes.types')]);
+        CRUD::addField(['name' => 'type', 'label' => 'Loại', 'type' => 'select_from_array', 'options' => config('ophim.episodes.types')]);
         CRUD::addField(['name' => 'link', 'label' => 'Nguồn phát', 'type' => 'url']);
         CRUD::addField(['name' => 'has_report', 'label' => 'Đánh dấu đang lỗi', 'type' => 'checkbox']);
-        CRUD::addField(['name' => 'report_message', 'label' => 'Report message', 'type' => 'textarea']);
+        CRUD::addField(['name' => 'report_message', 'label' => 'Tin nhắn báo cáo', 'type' => 'textarea']);
     }
 
     public function bulkDelete()

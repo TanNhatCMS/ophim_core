@@ -74,9 +74,9 @@ class ThemeManagementController extends CrudController
             ]);
         }
 
-        CRUD::addColumn(['name' => 'display_name', 'type' => 'text']);
-        CRUD::addColumn(['name' => 'preview_image', 'type' => 'image']);
-        CRUD::addColumn(['name' => 'version', 'type' => 'text']);
+        CRUD::addColumn(['name' => 'display_name', 'label' => 'Tên', 'type' => 'text']);
+        CRUD::addColumn(['name' => 'preview_image','label' => 'Xem trước hình ảnh', 'type' => 'image']);
+        CRUD::addColumn(['name' => 'version','label' => 'Phiên bản', 'type' => 'text']);
         $this->crud->addButtonFromModelFunction('line', 'editBtn', 'editBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'resetBtn', 'resetBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'activeBtn', 'activeBtn', 'beginning');

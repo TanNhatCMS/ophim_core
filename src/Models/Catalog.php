@@ -95,7 +95,7 @@ class Catalog extends Model implements TaxonomyInterface, Cacheable, SeoInterfac
 
     public function openView($crud = false)
     {
-        return '<a class="btn btn-sm btn-link" target="_blank" href="'.$this->getUrl().'" data-toggle="tooltip" title="View link"><i class="la la-link"></i> View</a>';
+        return '<a class="btn btn-sm btn-link" target="_blank" href="'.$this->getUrl().'" data-toggle="tooltip" title="Xem liên kết"><i class="la la-link"></i> Xem</a>';
     }
 
 
