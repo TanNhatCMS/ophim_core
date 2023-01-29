@@ -73,7 +73,15 @@ class StudioCrudController extends CrudController
 
         CRUD::addField(['name' => 'name', 'label' => 'Tên', 'type' => 'text']);
         CRUD::addField(['name' => 'slug', 'label' => 'Đường dẫn tĩnh', 'type' => 'text']);
-        CRUD::addField(['name' => 'image', 'label' => 'Ảnh', 'type' => 'upload']);
+        CRUD::addField([
+            'name' => 'image', 
+            'label' => 'Ảnh', 
+            'type' => 'ckfinder', 
+            'preview' => [
+                'width' => 'auto', 
+                'height' => '340px'
+            ]
+        ]);
     }
 
     /**

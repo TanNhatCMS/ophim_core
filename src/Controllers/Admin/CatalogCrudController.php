@@ -46,11 +46,11 @@ class CatalogCrudController extends CrudController
 
         CRUD::column('name')->label('Tên')->type('text');
         CRUD::column('slug')->label('Đường dẫn tĩnh')->type('text');
-        CRUD::column('paginate')->label('Item per page')->type('number');
-        CRUD::column('value')->label('Value')->type('text');
-        CRUD::column('seo_title')->label('SEO Title')->type('text');
-        CRUD::column('seo_des')->label('SEO Description')->type('text');
-        CRUD::column('seo_key')->label('SEO Keyword')->type('text');
+        CRUD::column('paginate')->label('Mục/trang')->type('number');
+        CRUD::column('value')->label('Giá trị')->type('text');
+        CRUD::column('seo_title')->label('Tiêu đề')->type('text');
+        CRUD::column('seo_des')->label('Mô tả')->type('text');
+        CRUD::column('seo_key')->label('Từ khoá')->type('text');
     }
 
     /**
@@ -67,11 +67,11 @@ class CatalogCrudController extends CrudController
 
         CRUD::field('name')->label('Tên')->type('text');
         CRUD::field('slug')->label('Đường dẫn tĩnh')->type('text');
-        CRUD::field('paginate')->label('Paginate')->hint('Item per page')->type('number');
+        CRUD::field('paginate')->label('Paginate')->hint('Mục/trang')->type('number');
         CRUD::field('value')->label('Value')->hint('relation_tables,relation_field,relation_value|find_by_field_1,find_by_fiel_2,...,find_by_field_n|value_1,value_2,...,value_n|sort_by_field|sort_algo')->type('text');
-        CRUD::field('seo_title')->label('SEO Title')->type('text');
-        CRUD::field('seo_des')->label('SEO Description')->type('textarea');
-        CRUD::field('seo_key')->label('SEO Keyword')->type('text');
+        CRUD::field('seo_title')->label('SEO Tiêu đề')->type('text');
+        CRUD::field('seo_des')->label('SEO Mô tả')->type('textarea');
+        CRUD::field('seo_key')->label('SEO Từ khoá')->type('text');
     }
 
     /**

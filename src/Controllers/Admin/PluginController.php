@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Illuminate\Support\Facades\Route;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Support\Facades\Artisan;
-use Ophim\Core\Models\Plugin;
+//use Ophim\Core\Models\Plugin;
 use Prologue\Alerts\Facades\Alert;
 
 class PluginController extends CrudController
@@ -21,7 +21,7 @@ class PluginController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(Plugin::class);
+        //CRUD::setModel(Plugin::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/plugin');
         CRUD::setEntityNameStrings('plugin', 'plugins');
         $this->crud->denyAccess('update');
@@ -40,7 +40,7 @@ class PluginController extends CrudController
         }
 
         CRUD::column('name')->label('Plugin')->type('text');
-        CRUD::column('version')->label('Version')->type('text');
+        CRUD::column('version')->label('Phiên bản')->type('text');
         $this->crud->addButtonFromModelFunction('line', 'editBtn', 'editBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'openBtn', 'openBtn', 'beginning');
     }

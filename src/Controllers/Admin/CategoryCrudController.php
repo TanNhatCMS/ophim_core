@@ -44,9 +44,9 @@ class CategoryCrudController extends CrudController
 
         CRUD::column('name')->label('Tên')->type('text');
         CRUD::column('slug')->label('Đường dẫn tĩnh')->type('text');
-        CRUD::column('seo_title')->label('SEO Title')->type('text');
-        CRUD::column('seo_des')->label('SEO Description')->type('text');
-        CRUD::column('seo_key')->label('SEO Keyword')->type('text');
+        CRUD::column('seo_title')->label('Tiêu đề')->type('text');
+        CRUD::column('seo_des')->label('Mô tả')->type('text');
+        CRUD::column('seo_key')->label('Từ khoá')->type('text');
     }
 
     /**
@@ -63,9 +63,9 @@ class CategoryCrudController extends CrudController
 
         CRUD::field('name')->label('Tên')->type('text');
         CRUD::field('slug')->label('Đường dẫn tĩnh')->type('text');
-        CRUD::field('seo_title')->label('SEO Title')->type('text');
-        CRUD::field('seo_des')->label('SEO Description')->type('textarea');
-        CRUD::field('seo_key')->label('SEO Keyword')->type('text');
+        CRUD::field('seo_title')->label('SEO Tiêu đề')->type('text');
+        CRUD::field('seo_des')->label('SEO Mô tả')->type('textarea');
+        CRUD::field('seo_key')->label('SEO Từ khoá')->type('text');
     }
 
     /**

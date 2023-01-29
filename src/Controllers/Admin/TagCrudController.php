@@ -47,9 +47,9 @@ class TagCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
-
-        CRUD::addColumn(['name' => 'name', 'type' => 'text']);
-        CRUD::addColumn(['name' => 'slug', 'type' => 'text']);
+      
+        CRUD::addColumn(['name' => 'name','label' => 'Tên', 'type' => 'text']);
+        CRUD::addColumn(['name' => 'slug','label' => 'Đường dẫn tĩnh', 'type' => 'text']);
     }
 
     /**
@@ -70,8 +70,8 @@ class TagCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
 
-        CRUD::addField(['name' => 'name', 'type' => 'text']);
-        CRUD::addField(['name' => 'slug', 'type' => 'text']);
+        CRUD::addField(['name' => 'name', 'label' => 'Tên', 'type' => 'text']);
+        CRUD::addField(['name' => 'slug',   'label' => 'Đường dẫn tĩnh', 'type' => 'text']);
     }
 
     /**
