@@ -540,7 +540,10 @@ class MovieCrudController extends CrudController
         CRUD::addField([
             'name' => 'is_sensitive_content', 
             'label' => 'Cảnh báo nội dung người lớn', 
-            'type' => 'boolean', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕',
             'tab' => 'Khác'
         ]);
         CRUD::addField([
