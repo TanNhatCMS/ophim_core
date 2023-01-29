@@ -30,7 +30,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'site_brand',
                 'description' => 'site_brand',
-                'name'        => 'Site Brand',
+                'name'        => 'Thương hiệu trang web',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
@@ -40,7 +40,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'site_logo',
                 'description' => 'site_logo',
-                'name'        => 'Site Logo',
+                'name'        => 'Logo trang web',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
@@ -57,7 +57,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'value' => 'Ophim.TV',
                 'active'      => 0,
@@ -69,7 +69,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'active'      => 0,
             ],
@@ -80,7 +80,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'value' => 'Phim hay mới cập nhật 2022',
                 'active'      => 0,
@@ -92,7 +92,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'value' => 'Ophim.TV',
                 'active'      => 0,
@@ -104,7 +104,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'value' => 'Ophim.TV',
                 'active'      => 0,
@@ -116,7 +116,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
-                    'tab' => 'General'
+                    'tab' => 'Cài đặt chung'
                 ]),
                 'active'      => 0,
             ],
