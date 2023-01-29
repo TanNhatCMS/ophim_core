@@ -68,7 +68,7 @@ php artisan optimize:clear
 ```
 2. Then, run command: 
 ```php
-php artisan ophim:install
+php artisan ophim:update
 ```
 3. Run 
 ```php
