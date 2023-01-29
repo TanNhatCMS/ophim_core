@@ -74,7 +74,7 @@ class StudioCrudController extends CrudController
         CRUD::addField(['name' => 'name', 'label' => 'Tên', 'type' => 'text']);
         CRUD::addField(['name' => 'slug', 'label' => 'Đường dẫn tĩnh', 'type' => 'text']);
         CRUD::addField([
-            'name' => 'image', 
+            'name' => 'thumb_url', 
             'label' => 'Ảnh', 
             'type' => 'ckfinder', 
             'preview' => [
@@ -82,6 +82,9 @@ class StudioCrudController extends CrudController
                 'height' => '340px'
             ]
         ]);
+        CRUD::field('seo_title')->label('SEO Tiêu đề')->type('text');
+        CRUD::field('seo_des')->label('SEO Mô tả')->type('textarea');
+        CRUD::field('seo_key')->label('SEO Từ khoá')->type('text');
     }
 
     /**

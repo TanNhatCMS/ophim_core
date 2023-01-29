@@ -66,12 +66,13 @@ class ThemeManagementController extends CrudController
         foreach (config('themes', []) as $key => $theme) {
             Theme::updateOrCreate([
                 'name' => $key,
+                'version' => explode('@', \PackageVersions\Versions::getVersion($theme['package_name']) ?? 0)[0]
             ], [
                 'display_name' => $theme['display_name'] ??  $theme['name'],
                 'preview_image' => $theme['preview_image'] ?: '',
                 'author' => $theme['author'] ?: '',
                 'package_name' => $theme['package_name'],
-                'version' => explode('@', \PackageVersions\Versions::getVersion($theme['package_name']) ?? 0)[0],
+                
             ]);
         }
 

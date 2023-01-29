@@ -51,6 +51,7 @@ class DirectorCrudController extends CrudController
 
         CRUD::addColumn(['name' => 'name', 'label' => 'Tên', 'type' => 'text']);
         CRUD::addColumn(['name' => 'slug', 'label' => 'Đường dẫn tĩnh', 'type' => 'text']);
+        CRUD::addColumn(['name' => 'bio', 'label' => 'bio', 'type' => 'text']);
         CRUD::addColumn(['name' => 'gender', 'label' => 'Giới tính', 'type' => 'text']);
         CRUD::addColumn(['name' => 'image', 'label' => 'Ảnh', 'type' => 'image']);
     }
@@ -76,7 +77,7 @@ class DirectorCrudController extends CrudController
         CRUD::addField(['name' => 'name', 'label' => 'Tên', 'type' => 'text']);
         CRUD::addField(['name' => 'slug', 'label' => 'Đường dẫn tĩnh', 'type' => 'text']);
         CRUD::addField([
-            'name' => 'image', 
+            'name' => 'thumb_url', 
             'label' => 'Ảnh', 
             'type' => 'ckfinder', 
             'preview' => [
@@ -84,6 +85,7 @@ class DirectorCrudController extends CrudController
                 'height' => '340px'
             ]
         ]);
+        CRUD::addField(['name' => 'bio', 'label' => 'bio', 'type' => 'text']);
         CRUD::addField([
             'name'        => 'gender',
             'label'       => "Giới tính",
@@ -92,6 +94,9 @@ class DirectorCrudController extends CrudController
             'allows_null' => false,
             'default'     => 'one',
         ],);
+        CRUD::field('seo_title')->label('SEO Tiêu đề')->type('text');
+        CRUD::field('seo_des')->label('SEO Mô tả')->type('textarea');
+        CRUD::field('seo_key')->label('SEO Từ khoá')->type('text');
     }
 
     /**
