@@ -18,8 +18,7 @@
             Tags</a>
     </li>
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('region') }}'><i
-                class='nav-icon la la-globe'></i> Khu
-            vực</a></li>
+                class='nav-icon la la-globe'></i> Khu vực</a></li>
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('actor') }}'><i
                 class='nav-icon la la-gratipay'></i>
             Diễn viên</a></li>
@@ -52,7 +51,7 @@
 <ul class="nav-dropdown-items">
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting/group/generals/edit') }}'><i
                 class='nav-icon la la-wrench'></i>
-            <span>General</span></a></li>
+            <span>Cài đặt Chung</span></a></li>
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting/group/metas/edit') }}'><i
                 class='nav-icon la la-chevron-circle-up'></i>
             <span>SEO</span></a></li>
