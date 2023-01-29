@@ -142,7 +142,35 @@ class MovieCrudController extends CrudController
                 $this->crud->query->where($field, '')->orWhere($field, NULL);
             }
         });
-
+        $this->crud->addFilter([
+            'name'  => 'type',
+            'type'  => 'select2',
+            'label' => 'Ngày chiếu phim'
+        ], function () {
+            return [
+                '0' => 'Hằng ngày',
+                '1' => 'Chủ Nhật',
+                '2' => 'Thứ 2',
+                '3' => 'Thứ 3',
+                '4' => 'Thứ 4',
+                '5' => 'Thứ 5',
+                '6' => 'Thứ 6',
+                '7' => 'Thứ 7'
+            ];
+        }, function ($val) {
+            $this->crud->addClause('where', 'showntimes_in_weekday', $val);
+        });
+        $this->crud->addFilter(
+            [
+                'type'  => 'simple',
+                'name'  => 'is_shown_in_weekly',
+                'label' => 'Lịch chiếu phim'
+            ],
+            false,
+            function () {
+                $this->crud->addClause('where', 'is_shown_in_weekly', true);
+            }
+        );
         $this->crud->addFilter(
             [
                 'type'  => 'simple',
@@ -166,17 +194,7 @@ class MovieCrudController extends CrudController
                 $this->crud->addClause('where', 'is_shown_in_theater', true);
             }
         );
-        $this->crud->addFilter(
-            [
-                'type'  => 'simple',
-                'name'  => 'is_shown_in_weekly',
-                'label' => 'Lịch chiếu phim'
-            ],
-            false,
-            function () {
-                $this->crud->addClause('where', 'is_shown_in_weekly', true);
-            }
-        );
+      
         CRUD::addButtonFromModelFunction('line', 'open_view', 'openView', 'beginning');
 
         CRUD::addColumn([
@@ -297,14 +315,14 @@ class MovieCrudController extends CrudController
             'tab' => 'Lịch chiếu'
         ]);
         CRUD::addField([
-            'name' => 'showntimes_in_weekly',
+            'name' => 'showntimes_in_day',
             'label' => 'Ngày bắt đầu chiếu phim',
             'default' => '',
             'type' => 'text', 'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
             'tab' => 'Lịch chiếu'
         ]);
         CRUD::addField([
-            'name' => 'showntimes_in_day', 
+            'name' => 'showntimes_in_weekly', 
             'label' => 'Thời gian đầu chiếu phim', 
             'type' => 'text', 
             'default' => '00:00',
