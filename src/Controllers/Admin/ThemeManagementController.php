@@ -71,11 +71,13 @@ class ThemeManagementController extends CrudController
                 'preview_image' => $theme['preview_image'] ?: '',
                 'author' => $theme['author'] ?: '',
                 'package_name' => $theme['package_name'],
+                'version' => explode('@', \PackageVersions\Versions::getVersion($theme['package_name']) ?? 0)[0],
             ]);
         }
 
         CRUD::addColumn(['name' => 'display_name', 'label' => 'Tên', 'type' => 'text']);
-        CRUD::addColumn(['name' => 'preview_image','label' => 'Xem trước hình ảnh', 'type' => 'image']);
+        CRUD::addColumn(['name' => 'preview_image','label' => 'Ảnh chụp', 'type' => 'image','height' => '100px',
+        'width'  => '68px',]);
         CRUD::addColumn(['name' => 'version','label' => 'Phiên bản', 'type' => 'text']);
         $this->crud->addButtonFromModelFunction('line', 'editBtn', 'editBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'resetBtn', 'resetBtn', 'beginning');
