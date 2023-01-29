@@ -242,55 +242,205 @@ class MovieCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
 
-        CRUD::addField(['name' => 'name', 'label' => 'Tên phim', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-6'
-        ], 'attributes' => ['placeholder' => 'Tên'], 'tab' => 'Thông tin phim']);
-        CRUD::addField(['name' => 'origin_name', 'label' => 'Tên gốc', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-6'
-        ], 'tab' => 'Thông tin phim']);
-        CRUD::addField(['name' => 'slug', 'label' => 'Đường dẫn tĩnh', 'type' => 'text', 'tab' => 'Thông tin phim']);
         CRUD::addField([
-            'name' => 'thumb_url', 'label' => 'Ảnh Thumb', 'type' => 'ckfinder', 'preview' => ['width' => 'auto', 'height' => '340px'], 'tab' => 'Thông tin phim'
+            'name' => 'name', 
+            'label' => 'Tên phim', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6'
+            ], 
+            'attributes' => ['placeholder' => 'Tên'],
+             'tab' => 'Thông tin phim'
         ]);
-        CRUD::addField(['name' => 'poster_url', 'label' => 'Ảnh Poster', 'type' => 'ckfinder', 'preview' => ['width' => 'auto', 'height' => '340px'], 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'content', 'label' => 'Nội dung', 'type' => 'summernote', 'tab' => 'Thông tin phim']);
-        CRUD::addField(['name' => 'notify', 'label' => 'Thông báo / ghi chú', 'type' => 'text', 'attributes' => ['placeholder' => 'Tuần này hoãn chiếu'], 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'showtimes', 'label' => 'Lịch chiếu phim', 'type' => 'text', 'attributes' => ['placeholder' => '21h tối hàng ngày'], 'tab' => 'Thông tin phim']);
-        CRUD::addField(['name' => 'trailer_url', 'label' => 'Trailer Youtube URL', 'type' => 'text', 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'episode_time', 'label' => 'Thời lượng tập phim', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
-        ], 'attributes' => ['placeholder' => '45 phút'], 'tab' => 'Thông tin phim']);
-        CRUD::addField(['name' => 'episode_current', 'label' => 'Tập phim hiện tại', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
-        ], 'attributes' => ['placeholder' => '5'], 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'episode_total', 'label' => 'Tổng số tập phim', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
-        ], 'attributes' => ['placeholder' => '12'], 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'language', 'label' => 'Ngôn ngữ', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
-        ], 'attributes' => ['placeholder' => 'Tiếng Việt'], 'tab' => 'Thông tin phim']);
-
-        CRUD::addField(['name' => 'quality', 'label' => 'Chất lượng', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
+        CRUD::addField([
+            'name' => 'origin_name', 'label' => 'Tên gốc', 'type' => 'text', 'wrapperAttributes' => [
+            'class' => 'form-group col-md-6'
         ], 'tab' => 'Thông tin phim']);
+        CRUD::addField([
+            'name' => 'slug', 
+            'label' => 'Đường dẫn tĩnh', 
+            'type' => 'text', 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'thumb_url', 
+            'label' => 'Ảnh Thumb', 
+            'type' => 'ckfinder', 
+            'preview' => [
+                'width' => 'auto', 
+                'height' => '340px'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'poster_url', 
+            'label' => 'Ảnh Poster', 
+            'type' => 'ckfinder', 
+            'preview' => [
+                'width' => 'auto', 
+                'height' => '340px'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
 
-        CRUD::addField(['name' => 'publish_year', 'label' => 'Năm xuất bản', 'type' => 'text', 'wrapperAttributes' => [
-            'class' => 'form-group col-md-4'
-        ], 'tab' => 'Thông tin phim']);
+        CRUD::addField([
+            'name' => 'content', 
+            'label' => 'Nội dung', 
+            'type' => 'summernote', 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'notify', 
+            'label' => 'Thông báo / ghi chú', 
+            'type' => 'text', 
+            'attributes' => ['placeholder' => 
+            'Tuần này hoãn chiếu'], 
+            'tab' => 'Thông tin phim'
+        ]);
 
-        CRUD::addField(['name' => 'type', 'label' => 'Định dạng', 'type' => 'radio', 'options' => ['single' => 'Phim lẻ', 'series' => 'Phim bộ'], 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'status', 'label' => 'Tình trạng', 'type' => 'radio', 'options' => ['trailer' => 'Sắp chiếu', 'ongoing' => 'Đang chiếu', 'completed' => 'Hoàn thành'], 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'categories', 'label' => 'Thể loại', 'type' => 'checklist', 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'regions', 'label' => 'Khu vực', 'type' => 'checklist', 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'directors', 'label' => 'Đạo diễn', 'type' => 'select2_relationship_tags', 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'actors', 'label' => 'Diễn viên',  'type' => 'select2_relationship_tags', 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'tags', 'label' => 'Tags',  'type' => 'select2_relationship_tags', 'tab' => 'Phân loại']);
-        CRUD::addField(['name' => 'studios', 'label' => 'Studios',  'type' => 'select2_relationship_tags', 'tab' => 'Phân loại']);
+        CRUD::addField([
+            'name' => 'showtimes', 
+            'label' => 'Lịch chiếu phim', 
+            'type' => 'text', 
+            'attributes' => [
+                'placeholder' => '21h tối hàng ngày'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'trailer_url', 
+            'label' => 'Trailer Youtube URL', 
+            'type' => 'url', 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'episode_time', 
+            'label' => 'Thời lượng tập phim', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'attributes' => [
+                'placeholder' => '45 phút'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'episode_current', 
+            'label' => 'Tập phim hiện tại', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'attributes' => [
+                'placeholder' => '5'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+
+        CRUD::addField([
+            'name' => 'episode_total', 
+            'label' => 'Tổng số tập phim', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'attributes' => ['placeholder' => '12'], 
+            'tab' => 'Thông tin phim'
+        ]);
+
+        CRUD::addField([
+            'name' => 'language', 
+            'label' => 'Ngôn ngữ', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'attributes' => [
+                'placeholder' => 'Tiếng Việt'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+
+        CRUD::addField([
+            'name' => 'quality', 
+            'label' => 'Chất lượng', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+
+        CRUD::addField([
+            'name' => 'publish_year', 
+            'label' => 'Năm xuất bản', 
+            'type' => 'text', 
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ],
+            'tab' => 'Thông tin phim'
+        ]);
+
+        CRUD::addField([
+            'name' => 'type',
+            'label' => 'Định dạng', 
+            'type' => 'radio', 
+            'options' => [
+                'single' => 'Phim lẻ', 
+                'series' => 'Phim bộ'
+            ],
+            'inline'      => true, 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'status', 
+            'label' => 'Tình trạng', 
+            'type' => 'radio', 
+            'options' => [
+                'trailer' => 'Sắp chiếu', 
+                'ongoing' => 'Đang chiếu', 
+                'completed' => 'Hoàn thành'
+            ], 
+            'inline'      => true, 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'categories', 
+            'label' => 'Thể loại', 
+            'type' => 'checklist', 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'regions', 
+            'label' => 'Khu vực', 
+            'type' => 'checklist', 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'directors', 
+            'label' => 'Đạo diễn', 
+            'type' => 'select2_relationship_tags', 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'actors', 
+            'label' => 'Diễn viên',  
+            'type' => 'select2_relationship_tags', 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'tags', 
+            'label' => 'Tags',  
+            'type' => 'select2_relationship_tags', 
+            'tab' => 'Phân loại'
+        ]);
+        CRUD::addField([
+            'name' => 'studios', 
+            'label' => 'Studios',  
+            'type' => 'select2_relationship_tags', 
+            'tab' => 'Phân loại'
+        ]);
 
         CRUD::addField([
             'name' => 'episodes',
@@ -309,6 +459,7 @@ class MovieCrudController extends CrudController
             'default' => false,
             'tab' => 'Lịch chiếu'
         ]);
+        
         CRUD::addField([
             'name' => 'showntimes_in_weekday', 
             'label' => 'Ngày chiếu phim hằng tuần', 
@@ -329,31 +480,78 @@ class MovieCrudController extends CrudController
             'tab' => 'Lịch chiếu'
         ]);
         CRUD::addField([
-            'name' => 'showntimes_in_day',
-            'label' => 'Ngày bắt đầu chiếu phim',
-            'default' => '',
-            'type' => 'date',
-            'format' => 'DD/MM/YYYY',
-            'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
-            'tab' => 'Lịch chiếu'
-        ]);
-        CRUD::addField([
             'name' => 'showntimes_in_weekly', 
             'label' => 'Thời gian đầu chiếu phim', 
             'type' => 'time', 
             'format' => 'HH:mm',
             'default' => '00:00',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
             'attributes' => ['placeholder' => 'định dạng giờ: hh:mm'], 
             'tab' => 'Lịch chiếu'
         ]);
+        CRUD::addField([
+            'name' => 'showntimes_in_day',
+            'label' => 'Ngày bắt đầu chiếu phim',
+            'default' => '',
+            'type' => 'date',
+            'format' => 'DD/MM/YYYY',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
+            'attributes' => ['placeholder' => 'định dạng ngày: dd/mm/yyyy'], 
+            'tab' => 'Lịch chiếu'
+        ]);
+        
 
-        CRUD::addField(['name' => 'update_handler', 'label' => 'Trình cập nhật', 'type' => 'select_from_array', 'options' => collect(config('ophim.updaters', []))->pluck('name', 'handler')->toArray(), 'tab' => 'Cập nhật']);
-        CRUD::addField(['name' => 'update_identity', 'label' => 'ID cập nhật', 'type' => 'text', 'tab' => 'Cập nhật']);
+        CRUD::addField([
+            'name' => 'update_handler', 
+            'label' => 'Trình cập nhật', 
+            'type' => 'select_from_array', 
+            'options' => collect(config('ophim.updaters', []))->pluck('name', 'handler')->toArray(), 
+            'tab' => 'Cập nhật'
+        ]);
+        CRUD::addField([
+            'name' => 'update_identity', 
+            'label' => 'ID cập nhật', 
+            'type' => 'text', 
+            'tab' => 'Cập nhật'
+        ]);
 
-        CRUD::addField(['name' => 'is_shown_in_theater', 'label' => 'Phim chiếu rạp', 'type' => 'boolean', 'tab' => 'Khác']);
-        CRUD::addField(['name' => 'is_copyright', 'label' => 'Có bản quyền phim', 'type' => 'boolean', 'tab' => 'Khác']);
-        CRUD::addField(['name' => 'is_sensitive_content', 'label' => 'Cảnh báo nội dung người lớn', 'type' => 'boolean', 'tab' => 'Khác']);
-        CRUD::addField(['name' => 'is_recommended', 'label' => 'Đề cử', 'type' => 'boolean', 'tab' => 'Khác']);
+        CRUD::addField([
+            'name' => 'is_shown_in_theater', 
+            'label' => 'Phim chiếu rạp', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕',
+            'tab' => 'Khác'
+        ]);
+        CRUD::addField([
+            'name' => 'is_copyright', 
+            'label' => 'Có bản quyền phim', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕', 
+            'tab' => 'Khác'
+        ]);
+        CRUD::addField([
+            'name' => 'is_sensitive_content', 
+            'label' => 'Cảnh báo nội dung người lớn', 
+            'type' => 'boolean', 
+            'tab' => 'Khác'
+        ]);
+        CRUD::addField([
+            'name' => 'is_recommended', 
+            'label' => 'Đề cử', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕',
+            'tab' => 'Khác'
+        ]);
     }
 
     /**
@@ -367,7 +565,15 @@ class MovieCrudController extends CrudController
         $this->authorize('update', $this->crud->getEntryWithLocale($this->crud->getCurrentEntryId()));
 
         $this->setupCreateOperation();
-        CRUD::addField(['name' => 'timestamps', 'label' => 'Cập nhật thời gian', 'type' => 'checkbox', 'tab' => 'Cập nhật']);
+        CRUD::addField([
+            'name' => 'timestamps', 
+            'label' => 'Cập nhật thời gian', 
+            'type' => 'switch', 
+            'color'    => 'primary', // May be any bootstrap color class or an hex color
+            'onLabel' => '✓',
+            'offLabel' => '✕', 
+            'tab' => 'Cập nhật'
+        ]);
     }
 
     public function store(Request $request)
