@@ -18,3 +18,11 @@ if (!function_exists('get_theme_option')) {
         return $props[$key] ?? $fallback;
     }
 }
+if (!function_exists('get_theme_info')) {
+    function get_theme_info($key, $fallback = null)
+    {
+        $theme = Theme::getActivatedTheme();
+        if (is_null($theme)) return $fallback;
+        return $theme[$key] ?? $fallback;
+    }
+}
