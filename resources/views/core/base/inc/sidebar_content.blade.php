@@ -33,7 +33,12 @@
 <a class='nav-link' href='{{ backpack_url('episode') }}'><i class='nav-icon la la-info-circle'></i>
     Phim lỗi</a>
 </li>
-
+<li class='nav-item'>
+    <a class='nav-link' href='{{ backpack_url('page') }}'>
+        <i class='nav-icon la la-file-o'></i> <span>Trang</span>
+    </a>
+</li>
+@if (backpack_user()->hasRole('Admin'))
 <li class="nav-title">Tuỳ chỉnh</li>
 <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i
         class="nav-icon la la-paint-brush"></i> Giao diện</a>
@@ -63,6 +68,7 @@
             <span>Khác</span></a></li>
 </ul>
 </li>
+@endif
 <li class='nav-item'>
 <a class='nav-link' href='{{ backpack_url('sitemap/create') }}'><i class='nav-icon la la-map'></i>
     Sitemap</a>
@@ -93,11 +99,11 @@
 @if (backpack_user()->hasRole('Admin'))
 <li class="nav-title">{{ trans('backpack::base.administration') }}</li>
 <li class="nav-item nav-dropdown">
-<a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-users"></i>Xác thực</a>
+<a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-users"></i>Quản lý Xác Thực</a>
 <ul class="nav-dropdown-items">
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-user"></i> <span>Các Người Dùng</span></a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('role') }}"><i class="nav-icon la la-id-badge"></i> <span>Các Vai Trò</span></a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Các Quyền</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-user"></i> <span>Quản lý tài khoản</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('role') }}"><i class="nav-icon la la-id-badge"></i> <span>Quản lý Vai Trò</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Quản lý Quyền</span></a></li>
 </ul>
 </li>
 <li class="nav-item">
