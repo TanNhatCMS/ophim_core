@@ -71,8 +71,7 @@ class ThemeManagementController extends CrudController
                 'display_name' => $theme['display_name'] ??  $theme['name'],
                 'preview_image' => $theme['preview_image'] ?: '',
                 'author' => $theme['author'] ?: '',
-                'package_name' => $theme['package_name'],
-               
+                'package_name' => $theme['package_name']
             ]);
         }
 
