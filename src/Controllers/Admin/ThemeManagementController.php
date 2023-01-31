@@ -72,7 +72,7 @@ class ThemeManagementController extends CrudController
                 'preview_image' => $theme['preview_image'] ?: '',
                 'author' => $theme['author'] ?: '',
                 'package_name' => $theme['package_name'],
-                'version' => explode('@', \PackageVersions\Versions::getVersion($theme['package_name']) ?? 0)[0]
+               
             ]);
         }
 
