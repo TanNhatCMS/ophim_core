@@ -7,7 +7,7 @@
             'class' => 'alert alert-dark mb-2 col-12',
             'heading' => '8Anime CMS',
             'content' =>
-                'Phiên bản: <span class="text-danger text-break">' V.
+                'Phiên bản: <span class="text-danger text-break"> V' .
                 config('ophim.version') .
                 '</span><br/>
                 Giao diện:<span class="text-danger text-break">'.
