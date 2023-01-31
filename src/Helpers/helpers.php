@@ -26,3 +26,20 @@ if (!function_exists('get_theme_info')) {
         return $theme[$key] ?? $fallback;
     }
 }
+if (!function_exists('get_theme_version')) {
+    function get_theme_version()
+    {
+        if (!\Composer\InstalledVersions::isInstalled(get_theme_info('package_name'))) {
+            return 'Unknown';
+        }
+        return  explode('@', \PackageVersions\Versions::getVersion(get_theme_info('package_name')) ?? 0)[0];
+    }
+}
+if (!function_exists('CheckPermission')) {
+    function CheckPermission($key)
+    {
+        if (!backpack_user()->hasPermissionTo($key)) {
+            abort(403);
+        }
+    }
+}
