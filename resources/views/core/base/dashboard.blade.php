@@ -5,13 +5,13 @@
         [
             'type' => 'alert',
             'class' => 'alert alert-dark mb-2 col-12',
-            'heading' => '8Anime.net',
+            'heading' => '8Anime CMS',
             'content' =>
-                '
-                Phiên bản: <span class="text-danger text-break">' .
+                'Phiên bản: <span class="text-danger text-break">' V.
                 config('ophim.version') .
-                '</span>
-            ',
+                '</span><br/>
+                Giao diện:<span class="text-danger text-break">'.
+                    get_theme_info('display_name'). ' V'.get_theme_version(),
             'close_button' => true, // show close button or not
         ],
     ];
