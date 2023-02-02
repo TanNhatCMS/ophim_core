@@ -56,7 +56,7 @@ class Episode extends Model implements Cacheable, HasUrlInterface, SeoInterface
 
     public function openEpisode($crud = false)
     {
-        return '<a class="btn btn-sm btn-link" target="_blank" href="' . $this->getUrl() . '" data-toggle="tooltip" title="Chỉ là một nút tùy chỉnh."><i class="fa fa-search"></i> Mở nó ra</a>';
+        return '<a class="btn btn-sm btn-link" target="_blank" href="' . $this->getUrl() . '?preview=true" data-toggle="tooltip" title="Chỉ là một nút tùy chỉnh."><i class="fa fa-search"></i> Mở nó ra</a>';
     }
 
     protected function titlePattern(): string
