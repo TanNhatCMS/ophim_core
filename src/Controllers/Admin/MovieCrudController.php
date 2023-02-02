@@ -196,7 +196,11 @@ class MovieCrudController extends CrudController
         );
       
         CRUD::addButtonFromModelFunction('line', 'open_view', 'openView', 'beginning');
-
+        CRUD::addColumn([
+            'name' => 'thumb_url', 'label' => 'Ảnh thumb', 'type' => 'image',
+            'height' => '100px',
+            'width'  => '68px',
+        ]);
         CRUD::addColumn([
             'name' => 'name',
             'origin_name' => 'origin_name',
@@ -211,16 +215,10 @@ class MovieCrudController extends CrudController
                 $query->where('name', 'like', '%' . $searchTerm . '%')->orWhere('origin_name', 'like', '%' . $searchTerm . '%');
             }
         ]);
-
-        CRUD::addColumn([
-            'name' => 'thumb_url', 'label' => 'Ảnh thumb', 'type' => 'image',
-            'height' => '100px',
-            'width'  => '68px',
-        ]);
         CRUD::addColumn(['name' => 'categories', 'label' => 'Thể loại', 'type' => 'relationship',]);
         CRUD::addColumn(['name' => 'regions', 'label' => 'Khu vực', 'type' => 'relationship',]);
         CRUD::addColumn(['name' => 'updated_at', 'label' => 'Cập nhật lúc', 'type' => 'datetime', 'format' => 'DD/MM/YYYY HH:mm:ss']);
-        // CRUD::addColumn(['name' => 'user_name', 'label' => 'Cập nhật bởi', 'type' => 'text',]);
+         CRUD::addColumn(['name' => 'user_name', 'label' => 'Cập nhật bởi', 'type' => 'text',]);
         CRUD::addColumn(['name' => 'view_total', 'label' => 'Lượt xem', 'type' => 'number',]);
     }
 

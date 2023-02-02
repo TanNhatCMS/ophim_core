@@ -30,14 +30,14 @@ $config_show_status = [
     ],
 ];
 @endphp
-<div style="
+<div class="">
+    @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
+    <div style="
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-   width: 300px;"class="">
-    @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-    <div class="text-primary pb-2 ">
+   width: 200px;" class="text-primary pb-2 ">
         {{ $name }} 
         <span class="text-success">[{{ $publish_year }}]</span>
     </div>
