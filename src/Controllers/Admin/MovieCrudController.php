@@ -106,7 +106,7 @@ class MovieCrudController extends CrudController
                 $query->where('id', $value);
             });
         });
-
+/*
         $this->crud->addFilter([
             'name'  => 'region_id',
             'type'  => 'select2',
@@ -118,7 +118,7 @@ class MovieCrudController extends CrudController
                 $query->where('id', $value);
             });
         });
-
+*/
         $this->crud->addFilter([
             'name'  => 'other',
             'type'  => 'select2',
