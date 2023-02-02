@@ -33,13 +33,15 @@ $config_show_status = [
 @endphp
 <div class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-        <div class="card" style="position: relative; overflow: hidden;">
+        <div class="card" style="">
             <div class="firstinfo" style="display: flex;">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
                 <div style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;width: 200px;" class="profileinfo">
                   <span class="text-primary pb-2 ">{{ $name }} </span>
+                  <br/>
                   <div class="text-muted pb-2">
                     <small>({{ $origin_name }}) 
+                        <br/>
                         <span class="text-success">[{{ $publish_year }}]</span>
                         <span class="text-danger">[{{ $episode_current }}]</span>
                     </small>
