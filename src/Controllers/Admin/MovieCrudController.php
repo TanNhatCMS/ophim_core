@@ -203,6 +203,7 @@ class MovieCrudController extends CrudController
             'status' => 'status',
             'movie_type' => 'type',
             'episode_current' => 'episode_current',
+            'thumb_url' => 'thumb_url',
             'label' => 'Thông tin',
             'type' => 'view',
             'view' => 'ophim::movies.columns.column_movie_info',
@@ -210,11 +211,11 @@ class MovieCrudController extends CrudController
                 $query->where('name', 'like', '%' . $searchTerm . '%')->orWhere('origin_name', 'like', '%' . $searchTerm . '%');
             }
         ]);
+        CRUD::addColumn(['name' => 'view_total', 'label' => 'Lượt xem', 'type' => 'number',]);
+        CRUD::addColumn(['name' => 'user_name', 'label' => 'Cập nhật bởi', 'type' => 'text',]);
         CRUD::addColumn(['name' => 'categories', 'label' => 'Thể loại', 'type' => 'relationship',]);
         CRUD::addColumn(['name' => 'regions', 'label' => 'Khu vực', 'type' => 'relationship',]);
         CRUD::addColumn(['name' => 'updated_at', 'label' => 'Cập nhật lúc', 'type' => 'datetime', 'format' => 'DD/MM/YYYY HH:mm:ss']);
-         CRUD::addColumn(['name' => 'user_name', 'label' => 'Cập nhật bởi', 'type' => 'text',]);
-        CRUD::addColumn(['name' => 'view_total', 'label' => 'Lượt xem', 'type' => 'number',]);
     }
 
     /**
