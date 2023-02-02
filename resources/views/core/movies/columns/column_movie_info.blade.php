@@ -31,17 +31,17 @@ $config_show_status = [
     ],
 ];
 @endphp
-<div style="display: flex; width: 450px;" class="">
+<div class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-        <div >
+        <div style="display: flex; width: 250px;" class="">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
-                <div style="">
-                    <marquee class="text-primary pb-2">{{ $name }} </marquee>
+                <div style="width: 150px;">
+                    <marquee class="text-primary pb-2">{{ $name }} </marquee><br>
                     <marquee class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
-                    </marquee>
+                    </marquee><br>
                     <span class="text-success">[{{ $publish_year }}]</span>
-                    <span class="text-danger">[{{ $episode_current }}]</span>
+                    <span class="text-danger">[{{ $episode_current }}]</span><br>
                     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
                     <div class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</div>
                 </div>
