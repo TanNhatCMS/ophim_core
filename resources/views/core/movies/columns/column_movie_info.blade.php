@@ -31,11 +31,11 @@ $config_show_status = [
     ],
 ];
 @endphp
-<div class="">
+<div style="display: flex; width: 450px;" class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-        <div class="card" style="display: flex;">
+        <div >
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
-                <div style="" class="profileinfo">
+                <div style="">
                     <marquee class="text-primary pb-2">{{ $name }} </marquee>
                     <marquee class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
