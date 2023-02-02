@@ -67,7 +67,7 @@ class MovieCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number','tab'=>'Thông tin phim']);
          */
-
+        $this->crud->enableExportButtons();
         $this->crud->addFilter([
             'name'  => 'status',
             'type'  => 'select2',
