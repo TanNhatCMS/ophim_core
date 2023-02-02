@@ -197,11 +197,6 @@ class MovieCrudController extends CrudController
       
         CRUD::addButtonFromModelFunction('line', 'open_view', 'openView', 'beginning');
         CRUD::addColumn([
-            'name' => 'thumb_url', 'label' => 'Ảnh thumb', 'type' => 'image',
-            'height' => '100px',
-            'width'  => '68px',
-        ]);
-        CRUD::addColumn([
             'name' => 'name',
             'origin_name' => 'origin_name',
             'publish_year' => 'publish_year',
