@@ -206,6 +206,9 @@ class MovieCrudController extends CrudController
             'thumb_url' => 'thumb_url',
             'label' => 'Thông tin',
             'type' => 'view',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ], 
             'view' => 'ophim::movies.columns.column_movie_info',
             'searchLogic' => function ($query, $column, $searchTerm) {
                 $query->where('name', 'like', '%' . $searchTerm . '%')->orWhere('origin_name', 'like', '%' . $searchTerm . '%');
