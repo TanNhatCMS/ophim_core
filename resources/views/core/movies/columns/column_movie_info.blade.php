@@ -31,7 +31,6 @@ $config_show_status = [
     ],
 ];
 @endphp
-<div class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
         <div style="display: flex; width: 250px;" class="">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
@@ -47,4 +46,3 @@ $config_show_status = [
                 </div>
         </div>
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_end')
-</div>
