@@ -30,10 +30,22 @@ $config_show_status = [
     ],
 ];
 @endphp
-<div class="">
+<div style="
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   width: 300px;"class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-    <div class="text-primary pb-2">{{ $name }} <span class="text-success">[{{ $publish_year }}]</span></div>
-    <div class="text-muted pb-2"><small>({{ $origin_name }}) <span class="text-danger">[{{ $episode_current }}]</span></small></div>
+    <div class="text-primary pb-2 ">
+        {{ $name }} 
+        <span class="text-success">[{{ $publish_year }}]</span>
+    </div>
+    <div class="text-muted pb-2">
+        <small>({{ $origin_name }}) 
+            <span class="text-danger">[{{ $episode_current }}]</span>
+        </small>
+    </div>
     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
     <div class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</div>
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_end')
