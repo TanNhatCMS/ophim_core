@@ -37,9 +37,9 @@ $config_show_status = [
             <div class="col-md-3">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
             </div>
-            <div class="col-md-7" style="overflow-x: auto;">
-                    <div class="card-title text-primary ">{{ $name }}</div>
-                    <div class="card-title text-muted ">({{ $origin_name }})</div>
+            <div class="col-md-7" style="overflow-x: auto; max-width: 232px; ">
+                    <span class="card-title text-primary ">{{ $name }}</span>
+                    <span class="card-title text-muted ">({{ $origin_name }})</span>
                     <p class="card-text">
                         <span class="text-success">[{{ $publish_year }}]</span>
                         <span class="text-danger">[{{ $episode_current }}]</span><br/>
