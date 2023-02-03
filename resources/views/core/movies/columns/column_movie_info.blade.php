@@ -35,8 +35,8 @@ $config_show_status = [
         <div style="display: flex; width: 250px;" class="">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
                 <div style="width: 150px; overflow-x: auto;">
-                    <div class="text-primary pb-2">{{ $name }} </div>
-                    <div class="text-muted pb-2">
+                    <div style="width: 150px;" class="text-primary pb-2">{{ $name }} </div>
+                    <div tyle="width: 150px;" class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
                     </div>
                     <span class="text-success">[{{ $publish_year }}]</span>
