@@ -35,12 +35,12 @@ $config_show_status = [
         <div style="display: flex; width: 250px;" class="">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
                 <div style="width: 150px; overflow-x: auto;">
-                    <div class="text-primary pb-2">{{ $name }} </div><br>
+                    <div class="text-primary pb-2">{{ $name }} </div>
                     <div class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
                     </div><br>
                     <span class="text-success">[{{ $publish_year }}]</span>
-                    <span class="text-danger">[{{ $episode_current }}]</span><br>
+                    <span class="text-danger">[{{ $episode_current }}]</span>
                     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
                     <div class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</div>
                 </div>
