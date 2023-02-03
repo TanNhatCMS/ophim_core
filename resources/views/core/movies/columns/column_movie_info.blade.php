@@ -38,7 +38,7 @@ $config_show_status = [
                     <div class="text-primary pb-2">{{ $name }} </div>
                     <div class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
-                    </div><br>
+                    </div>
                     <span class="text-success">[{{ $publish_year }}]</span>
                     <span class="text-danger">[{{ $episode_current }}]</span>
                     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
