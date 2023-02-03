@@ -34,11 +34,11 @@ $config_show_status = [
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
         <div style="display: flex; width: 250px;" class="">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
-                <div style="width: 150px;">
-                    <marquee class="text-primary pb-2">{{ $name }} </marquee><br>
-                    <marquee class="text-muted pb-2">
+                <div style="width: 150px; overflow-x: auto;">
+                    <div class="text-primary pb-2">{{ $name }} </div><br>
+                    <div class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
-                    </marquee><br>
+                    </div><br>
                     <span class="text-success">[{{ $publish_year }}]</span>
                     <span class="text-danger">[{{ $episode_current }}]</span><br>
                     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
