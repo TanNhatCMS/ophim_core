@@ -32,21 +32,17 @@ $config_show_status = [
 ];
 @endphp
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
-    <div class="card mb-1" style=" max-width: 300px;  ">
-        <div  style="display: flex;" class="row" >
-            <div class="col-md-3">
-                <img src="{{ $thumb_url }}" height="100px" width="68px"/>
-            </div>
-            <div class="col-md-7" style="overflow-x: auto; max-width: 232px; ">
-                    <span class="card-title text-primary ">{{ $name }}</span>
-                    <span class="card-title text-muted ">({{ $origin_name }})</span>
-                    <p class="card-text">
-                        <span class="text-success">[{{ $publish_year }}]</span>
-                        <span class="text-danger">[{{ $episode_current }}]</span><br/>
-                        <span class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</span>
-                        <span class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</span>
-                    </p>
-            </div>
+        <div style="display: flex; width: 250px;" class="border rounded">
+                <img src="{{ $thumb_url }}" class="img-thumbnail" height="100px" width="68px"/>
+                <div style="max-width: 182px; overflow-x: auto;">
+                    <span class="text-primary pb-2">{{ $name }} </span>
+                    <span class="text-muted pb-2">
+                        <small>({{ $origin_name }})</small>
+                    </span>
+                    <span class="text-success">[{{ $publish_year }}]</span>
+                    <span class="text-danger">[{{ $episode_current }}]</span>
+                    <span class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</span>
+                    <span class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</span>
+                </div>
         </div>
-    </div>
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_end')
