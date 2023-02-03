@@ -39,7 +39,7 @@ $config_show_status = [
                     <span class="text-muted pb-2">
                         <small>({{ $origin_name }})</small>
                     </span><br/>
-                    <span class="text-success">[{{ $publish_year }}]</span><br/>
+                    <span class="text-success">[{{ $publish_year }}]</span>
                     <span class="text-danger">[{{ $episode_current }}]</span><br/>
                     <span class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</span>
                     <span class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</span>
