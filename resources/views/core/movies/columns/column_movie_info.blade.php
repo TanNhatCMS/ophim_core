@@ -37,14 +37,14 @@ $config_show_status = [
             <div class="col-md-3">
                 <img src="{{ $thumb_url }}" height="100px" width="68px"/>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7" style="overflow-x: auto;">
                     <div class="card-title text-primary ">{{ $name }}</div>
                     <div class="card-title text-muted ">({{ $origin_name }})</div>
                     <p class="card-text">
                         <span class="text-success">[{{ $publish_year }}]</span>
-                        <span class="text-danger">[{{ $episode_current }}]</span>
-                        <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
-                        <div class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</div>
+                        <span class="text-danger">[{{ $episode_current }}]</span><br/>
+                        <span class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</span>
+                        <span class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</span>
                     </p>
             </div>
         </div>
