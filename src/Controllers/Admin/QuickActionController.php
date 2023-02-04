@@ -26,6 +26,17 @@ class QuickActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function ping()
+    {
+        $status = ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
+        Alert::success($status)->flash();
+        return back();
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function delete_opcache()
     {
         Artisan::call('opcache:clear');
