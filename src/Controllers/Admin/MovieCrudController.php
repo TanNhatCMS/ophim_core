@@ -311,8 +311,17 @@ class MovieCrudController extends CrudController
         CRUD::addField([
             'name' => 'trailer_url', 
             'label' => 'Trailer Youtube URL', 
-            'type' => 'url', 
-            'tab' => 'Thông tin phim'
+            'type' => 'youtube', 
+            'tab' => 'Thông tin phim',
+            'has_preview' => true,
+            'preview' => [
+                'width' => '640', 
+                'height' => '360'
+            ],
+            'attributes' => [
+                'placeholder' => 'link youtube'
+            ], 
+
         ]);
         CRUD::addField([
             'name' => 'episode_time', 
