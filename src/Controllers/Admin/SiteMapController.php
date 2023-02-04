@@ -34,11 +34,14 @@ class SiteMapController extends CrudController
      */
     public function setup()
     {
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/sitemap/create');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/sitemap');
         CRUD::setEntityNameStrings('site map', 'site map');
     }
 
-
+    protected function setupListOperation()
+    {
+        $this->setupCreateOperation();
+    }
     /**
      * Define what happens when the Update operation is loaded.
      *
@@ -58,7 +61,10 @@ class SiteMapController extends CrudController
 
         $this->crud->setOperationSetting('showSaveActionChange', false);
     }
-
+    protected function setupUpdateOperation()
+    {
+        $this->setupCreateOperation();
+    }
     public function render_styles()
     {
         $xml = view('ophim::sitemap/styles', [

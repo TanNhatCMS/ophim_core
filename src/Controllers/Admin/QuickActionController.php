@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Prologue\Alerts\Facades\Alert;
-
+use Backpack\Settings\app\Models\Setting;
 
 class QuickActionController extends Controller
 {
