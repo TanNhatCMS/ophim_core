@@ -55,18 +55,20 @@ function myCurl($url){
     return $httpCode;
     }
 }
+if (!function_exists('ping_pingomatic')) {
+    function ping_pingomatic($url, $title){
+        return " PingOmatic(".myCurl("https://pingomatic.com/ping/?chk_blogs=on
+        &chk_feedburner=on&chk_tailrank=on&chk_superfeedr=on&title=".$title."&blogurl=".$url)."). ";
+    }
+}
+
 if (!function_exists('ping_sitemap')) {
     function ping_sitemap($sitemapUrl){
         //Google
-        $returnCode = myCurl("http://www.google.com/webmasters/sitemaps/ping?sitemap=".$sitemapUrl);
-        $returnGoogle = "Google Sitemaps has been pinged (return code: ".$returnCode."). ";
+        $returnGoogle = "Đã ping Google(".myCurl("http://www.google.com/webmasters/sitemaps/ping?sitemap=".$sitemapUrl)."), ";
         //Bing / MSN
-        $returnCode = myCurl("https://www.bing.com/webmaster/ping.aspx?siteMap=".$sitemapUrl);
-        $returnBing  = "Bing / MSN Sitemaps has been pinged (return code: ".$returnCode."). ";
-        //ASK
-        $returnCode = myCurl("http://submissions.ask.com/ping?sitemap=".$sitemapUrl);
-        $returnASK = "ASK.com Sitemaps has been pinged (return code: ".$returnCode."). ";
-        return $returnGoogle.$returnBing.$returnASK  ;
+        $returnBing  = "& Bing/MSN(".myCurl("https://www.bing.com/webmaster/ping.aspx?siteMap=".$sitemapUrl)."), ";
+        return $returnGoogle.$returnBing;
     }
 }
 //$data = file_get_contents("https://www.google.com/webmasters/tools/ping?sitemap={$sitemap}");

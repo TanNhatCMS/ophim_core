@@ -172,7 +172,7 @@ class SiteMapController extends CrudController
         });
         $sitemap_index->writeToFile(public_path('sitemap.xml'));
         $this->add_styles("sitemap.xml");
-        $status = ping_sitemap( url('/sitemap.xml'));
+        $status = ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
         Alert::success("Đã tạo thành công sitemap tại thư mục public & ".$status)->flash();
         return back();
     }
