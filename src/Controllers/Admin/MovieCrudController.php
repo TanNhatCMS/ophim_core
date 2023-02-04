@@ -376,7 +376,7 @@ class MovieCrudController extends CrudController
         CRUD::addField([
             'name' => 'publish_year', 
             'label' => 'Năm xuất bản', 
-            'type' => 'text', 
+            'type' => 'number', 
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-4'
             ],
