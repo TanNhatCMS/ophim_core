@@ -34,7 +34,7 @@ class SiteMapController extends CrudController
      */
     public function setup()
     {
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/sitemap');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/sitemap/create');
         CRUD::setEntityNameStrings('site map', 'site map');
     }
     /**
