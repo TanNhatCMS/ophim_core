@@ -43,3 +43,32 @@ if (!function_exists('CheckPermission')) {
         }
     }
 }
+
+if (!function_exists('myCurl')) {
+// cUrl handler to ping the Sitemap submission URLs for Search Engines…
+function myCurl($url){
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    return $httpCode;
+    }
+}
+if (!function_exists('ping_sitemap')) {
+    function ping_sitemap($sitemapUrl){
+        //Google
+        $returnCode = myCurl("http://www.google.com/webmasters/sitemaps/ping?sitemap=".$sitemapUrl);
+        $returnGoogle = "Google Sitemaps has been pinged (return code: $returnCode).";
+        //Bing / MSN
+        $returnCode = myCurl("https://www.bing.com/webmaster/ping.aspx?siteMap=".$sitemapUrl);
+        $returnBing  = "Bing / MSN Sitemaps has been pinged (return code: $returnCode).";
+        //ASK
+        $returnCode = myCurl("http://submissions.ask.com/ping?sitemap=".$sitemapUrl);
+        $returnASK "ASK.com Sitemaps has been pinged (return code: $returnCode).";
+        return $returnGoogle.$returnBing.$returnASK  ;
+    }
+}
+//$data = file_get_contents("https://www.google.com/webmasters/tools/ping?sitemap={$sitemap}");
+//$status = ( strpos($data,"Sitemap Notification Received") !== false ) ? "OK" : "ERROR";
+//echo "Submitting Google Sitemap: {$status}\n";

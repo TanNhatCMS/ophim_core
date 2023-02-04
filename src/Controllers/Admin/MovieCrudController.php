@@ -265,6 +265,7 @@ class MovieCrudController extends CrudController
             'name' => 'thumb_url', 
             'label' => 'Ảnh Thumb', 
             'type' => 'ckfinder', 
+            'has_preview' => true,
             'preview' => [
                 'width' => 'auto', 
                 'height' => '340px'
@@ -275,6 +276,7 @@ class MovieCrudController extends CrudController
             'name' => 'poster_url', 
             'label' => 'Ảnh Poster', 
             'type' => 'ckfinder', 
+            'has_preview' => true,
             'preview' => [
                 'width' => 'auto', 
                 'height' => '340px'

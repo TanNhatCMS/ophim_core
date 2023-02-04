@@ -77,6 +77,7 @@ class StudioCrudController extends CrudController
             'name' => 'thumb_url', 
             'label' => 'Ảnh', 
             'type' => 'ckfinder', 
+            'has_preview' => true,
             'preview' => [
                 'width' => 'auto', 
                 'height' => '340px'

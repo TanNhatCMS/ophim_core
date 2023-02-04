@@ -37,7 +37,25 @@ class SiteMapController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/sitemap');
         CRUD::setEntityNameStrings('site map', 'site map');
     }
+    /**
+     * Define what happens when the Update operation is loaded.
+     *
+     * @see https://backpackforlaravel.com/docs/crud-operation-update
+     * @return void
+     */
+    protected function index()
+    {
+        CRUD::addField(['name' => 'sitemap', 'type' => 'custom_html', 'value' => 'Sitemap sẽ được lưu tại đường dẫn: <i>' . url('/sitemap.xml') . '</i>']);
+        $this->crud->addSaveAction([
+            'name' => 'save_and_new',
+            'redirect' => function ($crud, $request, $itemId) {
+                return $crud->route;
+            },
+            'button_text' => 'Tạo sitemap',
+        ]);
 
+        $this->crud->setOperationSetting('showSaveActionChange', false);
+    }
     /**
      * Define what happens when the Update operation is loaded.
      *
@@ -152,12 +170,10 @@ class SiteMapController extends CrudController
             $this->add_styles("sitemap/movies-sitemap{$chunk}.xml");
             $sitemap_index->add("sitemap/movies-sitemap{$chunk}.xml");
         });
-
         $sitemap_index->writeToFile(public_path('sitemap.xml'));
         $this->add_styles("sitemap.xml");
-
-        Alert::success("Đã tạo thành công sitemap tại thư mục public")->flash();
-
+        $status = ping_sitemap( url('/sitemap.xml'));
+        Alert::success("Đã tạo thành công sitemap tại thư mục public & ".$status)->flash();
         return back();
     }
 }
