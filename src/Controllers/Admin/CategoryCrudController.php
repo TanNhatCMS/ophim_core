@@ -74,8 +74,7 @@ class CategoryCrudController extends CrudController
             'preview' => [
                 'width' => 'auto', 
                 'height' => '340px'
-            ], 
-            'tab' => 'Thông tin phim'
+            ]
         ]);
         CRUD::addField([
             'name' => 'poster_url', 
@@ -85,8 +84,7 @@ class CategoryCrudController extends CrudController
             'preview' => [
                 'width' => 'auto', 
                 'height' => '340px'
-            ], 
-            'tab' => 'Thông tin phim'
+            ]
         ]);
     }
 
