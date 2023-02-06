@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('permissions', function (Blueprint $table) {
-            $table->string('title', 2048)->nullable();
+            $table->string('title', 100)->nullable();
         });
 
         Schema::table('roles', function (Blueprint $table) {
-            $table->string('title', 2048)->nullable();
+            $table->string('title', 100)->nullable();
         });
        
     }

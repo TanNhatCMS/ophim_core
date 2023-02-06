@@ -66,6 +66,28 @@ class CategoryCrudController extends CrudController
         CRUD::field('seo_title')->label('SEO Tiêu đề')->type('text');
         CRUD::field('seo_des')->label('SEO Mô tả')->type('textarea');
         CRUD::field('seo_key')->label('SEO Từ khoá')->type('text');
+        CRUD::addField([
+            'name' => 'thumb_url', 
+            'label' => 'Ảnh Thumb', 
+            'type' => 'ckfinder', 
+            'has_preview' => true,
+            'preview' => [
+                'width' => 'auto', 
+                'height' => '340px'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
+        CRUD::addField([
+            'name' => 'poster_url', 
+            'label' => 'Ảnh Poster', 
+            'type' => 'ckfinder', 
+            'has_preview' => true,
+            'preview' => [
+                'width' => 'auto', 
+                'height' => '340px'
+            ], 
+            'tab' => 'Thông tin phim'
+        ]);
     }
 
     /**
