@@ -187,6 +187,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'site_category_key',
                 'description' => 'site_category_key',
+                'name'        => 'từ khóa thể loại mặc định',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
