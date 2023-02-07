@@ -53,19 +53,19 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'site_meta_siteName',
                 'description' => 'site_meta_siteName',
-                'name'        => 'Meta site name',
+                'name'        => 'Meta Tên trang web',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'tab' => 'Cài đặt chung'
                 ]),
-                'value' => 'Ophim.TV',
+               // 'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_meta_shortcut_icon',
                 'description' => 'site_meta_shortcut_icon',
-                'name'        => 'Meta shortcut icon',
+                'name'        => 'Meta biểu tượng phím tắt',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
@@ -82,43 +82,55 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'text',
                     'tab' => 'Cài đặt chung'
                 ]),
-                'value' => 'Phim hay mới cập nhật 2022',
+                //'value' => 'Phim hay mới cập nhật 2022',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_meta_description',
                 'description' => 'site_meta_description',
-                'name'        => 'Meta description',
+                'name'        => 'Meta miêu tả',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
                     'tab' => 'Cài đặt chung'
                 ]),
-                'value' => 'Ophim.TV',
+             //   'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_meta_keywords',
                 'description' => 'site_meta_keywords',
-                'name'        => 'Meta keywords',
+                'name'        => 'Meta từ khóa',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'textarea',
                     'tab' => 'Cài đặt chung'
                 ]),
-                'value' => 'Ophim.TV',
+              //  'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_meta_image',
                 'description' => 'site_meta_image',
-                'name'        => 'Meta image',
+                'name'        => 'Meta hình ảnh',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
                     'tab' => 'Cài đặt chung'
                 ]),
                 'active'      => 0,
+            ],
+            [
+                'key'         => 'site_meta_type',
+                'description' => 'site_meta_type',
+                'name'        => 'Meta Loại trang web',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'tab' => 'Cài đặt chung'
+                ]),
+                'active'      => 0,
+                'value' => 'movie',
             ],
             [
                 'key'         => 'site_movie_title',
@@ -130,7 +142,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin phim: {name}|{origin_name}|{language}|{quality}|{episode_current}|{publish_year}|...',
                     'tab' => 'Phim'
                 ]),
-                'value' => 'Phim {name}',
+               // 'value' => 'Phim {name}',
                 'active'      => 0,
             ],
             [
@@ -143,7 +155,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin phim: {movie.name}|{movie.origin_name}|{movie.language}|{movie.quality}|{movie.episode_current}|movie.publish_year}|...<br />Thông tin tập: {name}',
                     'tab' => 'Phim'
                 ]),
-                'value' => 'Xem phim {movie.name} tập {name} {movie.language} {movie.quality}',
+                //'value' => 'Xem phim {movie.name} tập {name} {movie.language} {movie.quality}',
                 'active'      => 0,
             ],
             [
@@ -156,33 +168,32 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+               // 'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_category_des',
                 'description' => 'site_category_des',
-                'name'        => 'Description thể loại mặc định',
+                'name'        => 'Sự miêu tả thể loại mặc định',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+              //  'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_category_key',
                 'description' => 'site_category_key',
-                'name'        => 'Keywords thể loại mặc định',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+               // 'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
@@ -195,72 +206,72 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+               // 'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_region_des',
                 'description' => 'site_region_des',
-                'name'        => 'Description quốc gia mặc định',
+                'name'        => 'Sự miêu tả quốc gia mặc định',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+               // 'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_region_key',
                 'description' => 'site_region_key',
-                'name'        => 'Keywords quốc gia mặc định',
+                'name'        => 'từ khóa quốc gia mặc định',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+             //   'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_studio_title',
                 'description' => 'site_studio_title',
-                'name'        => 'Tiêu đề studio',
+                'name'        => 'studio tiêu đề',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+              //  'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_studio_des',
                 'description' => 'site_studio_des',
-                'name'        => 'Description studio',
+                'name'        => 'mô tả phòng thu',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+             //   'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_studio_key',
                 'description' => 'site_studio_key',
-                'name'        => 'Keywords studio',
+                'name'        => 'studio từ khóa',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+              //  'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
@@ -273,33 +284,33 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-                'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
+             //   'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_actor_des',
                 'description' => 'site_actor_des',
-                'name'        => 'Description diễn viên',
+                'name'        => 'diễn viên & Sự miêu tả ',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-                'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
+             //   'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_actor_key',
                 'description' => 'site_actor_key',
-                'name'        => 'Keywords diễn viên',
+                'name'        => 'Từ khóa diễn viên',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-                'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
+             //   'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
                 'active'      => 0,
             ],
             [
@@ -312,20 +323,20 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-                'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
+             //   'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_director_des',
                 'description' => 'site_director_des',
-                'name'        => 'Description đạo diễn',
+                'name'        => 'Miêu tả đạo diễn',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-                'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
+             //   'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
@@ -338,7 +349,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-                'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
+             //   'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
                 'active'      => 0,
             ],
             [
@@ -351,33 +362,33 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-                'value' => 'Phim {name} vietsub - phim {name} full hd',
+              //  'value' => 'Phim {name} vietsub - phim {name} full hd',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_tag_des',
                 'description' => 'site_tag_des',
-                'name'        => 'Description tag',
+                'name'        => 'Miêu tả',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-                'value' => 'Phim {name} vietsub - phim {name} full hd',
+             //   'value' => 'Phim {name} vietsub - phim {name} full hd',
                 'active'      => 0,
             ],
             [
                 'key'         => 'site_tag_key',
                 'description' => 'site_tag_key',
-                'name'        => 'Keywords tag',
+                'name'        => 'Từ khóa',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-                'value' => 'xem phim {name},phim {name},{name} vietsub',
+             //   'value' => 'xem phim {name},phim {name},{name} vietsub',
                 'active'      => 0,
             ]
         ];
@@ -386,18 +397,18 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'jwplayer_license',
                 'description' => 'jwplayer_license',
-                'name'        => 'Jwplayer license',
+                'name'        => 'Jwplayer giấy phép',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
                 ]),
-                'value' => 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=',
+           //     'value' => 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=',
                 'active'      => 0,
             ],
             [
                 'key'         => 'jwplayer_logo_file',
                 'description' => 'jwplayer_logo_file',
-                'name'        => 'Jwplayer logo image',
+                'name'        => 'Jwplayer hình ảnh logo',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
@@ -407,7 +418,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'jwplayer_logo_link',
                 'description' => 'jwplayer_logo_link',
-                'name'        => 'Jwplayer logo link',
+                'name'        => 'Jwplayer liên kết logo',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
@@ -417,7 +428,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'jwplayer_logo_position',
                 'description' => 'jwplayer_logo_position',
-                'name'        => 'Jwplayer logo position',
+                'name'        => 'Jwplayer vị trí logo',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'select_from_array',
@@ -425,7 +436,7 @@ class SettingsTableSeeder extends Seeder
                         'top-left' => 'Top left',
                         'top-right' => 'Top right',
                         'bottom-right' => 'Bottom right',
-                        'bottom-left' => 'Bottom left',
+                        'bottom-left' => 'Dưới cùng bên trái',
                         'control-bar' => 'Control bar',
                     ]
                 ]),
@@ -434,7 +445,7 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'jwplayer_advertising_file',
                 'description' => 'jwplayer_advertising_file',
-                'name'        => 'Jwplayer advertising vast file',
+                'name'        => 'Jwplayer quảng cáo tập tin lớn',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
@@ -444,13 +455,13 @@ class SettingsTableSeeder extends Seeder
             [
                 'key'         => 'jwplayer_advertising_skipoffset',
                 'description' => 'jwplayer_advertising_skipoffset',
-                'name'        => 'Jwplayer advertising skipoffset',
+                'name'        => 'Jwplayer bỏ qua quảng cáo',
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'number',
                     'hint' => 'giây'
                 ]),
-                'value' => 5,
+            //    'value' => 5,
                 'active'      => 0,
             ],
         ];
@@ -465,7 +476,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'view',
                     'view' => 'themes::selector'
                 ]),
-                'value' => 'default',
+              //  'value' => 'default',
                 'active'      => 0,
             ],
         ];
