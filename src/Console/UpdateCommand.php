@@ -102,13 +102,13 @@ class UpdateCommand extends Command
         $this->installCKfinder();
         $this->progressBar->advance();
         $this->newLine(1);
-        $this->info('installCKfinder');
+        $this->info('db:seed  SettingsTableSeeder');
         $this->call('db:seed', [
             'class' => SettingsTableSeeder::class,
         ]);
         $this->progressBar->advance();
         $this->newLine(1);
-        $this->info('installCKfinder');
+        $this->info('db:seed CatalogsTableSeeder');
         $this->call('db:seed', [
             'class' => CatalogsTableSeeder::class,
         ]);
