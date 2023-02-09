@@ -45,9 +45,10 @@ $field['preview']['height'] = isset($field['preview']['height']) ? $field['previ
     @push('crud_fields_scripts')
         @include('ckfinder::setup')
         <script>
+           
             function selectFileWithCKFinder(elementId) {
                 CKFinder.popup({
-                    startupPath: '/images/sherwood-phan-1/',
+                    startupPath: '/images/',
                     chooseFiles: true,
                     width: 800,
                     height: 600,
