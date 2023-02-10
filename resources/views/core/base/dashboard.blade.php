@@ -9,9 +9,9 @@
             'content' =>
                 'Phiên bản: <span class="text-danger text-break"> V' .
                 config('ophim.version') .
-                '</span><br/>
+                '</span><br>
                 Giao diện:<span class="text-danger text-break"> '.
-                    get_theme_info('display_name'). ' (V'.get_theme_version().')',
+                    get_theme_info('display_name'). ' (V'.get_theme_version().')</span><br>Giao diện CURD:<span class="text-danger text-break">V'.get_crud_version().') </span>',
             'close_button' => true, // show close button or not
         ],
     ];
@@ -142,7 +142,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="p-3 col-md-3">
+        <div class="p-3 col-md-2">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -159,7 +159,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-3">
+        <div class="p-3 col-md-2">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -176,7 +176,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-3">
+        <div class="p-3 col-md-2">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -193,7 +193,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-3">
+        <div class="p-3 col-md-2">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -210,7 +210,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-3">
+        <div class="p-3 col-md-2">
             <table class="table table-sm">
                 <thead>
                     <tr>
