@@ -211,12 +211,18 @@ class OphimServiceProvider extends ServiceProvider
 
         $schedule->call(function () {
             DB::table('movies')->update(['view_day' => 0]);
-        })->daily();
+        })->daily()->name('reset view_day')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
             DB::table('movies')->update(['view_week' => 0]);
-        })->weekly();
+        })->weeklyOn(1, '00:00')->name('reset view_week')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
             DB::table('movies')->update(['view_month' => 0]);
-        })->monthly();
+        })->monthly()->name('reset view_month')->timezone('Asia/Ho_Chi_Minh');
+        $schedule->call(function () {
+            DB::table('movies')->update(['view_month' => 0]);
+        })->monthly()->name('reset view_month')->timezone('Asia/Ho_Chi_Minh');
+        $schedule->call(function () {
+            DB::table('movies')->update(['view_year' => 0]);
+        })->yearly()->name('reset view_year')->timezone('Asia/Ho_Chi_Minh');
     }
 }
