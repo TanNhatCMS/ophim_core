@@ -142,7 +142,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="p-3 col-md-4">
+        <div class="p-3 col-md-3">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -159,7 +159,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-4">
+        <div class="p-3 col-md-3">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -176,7 +176,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-4">
+        <div class="p-3 col-md-3">
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -193,7 +193,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="p-3 col-md-4">
+        <div class="p-3 col-md-3">
             <table class="table table-sm">
                 <thead>
                     <tr>
