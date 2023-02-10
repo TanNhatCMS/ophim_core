@@ -404,7 +404,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'text',
                     'tab' => 'Trình phát'
                 ]),
-           //     'value' => 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=',
+                'value' => 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=',
                 'active'      => 0,
             ],
             [
@@ -468,7 +468,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'giây',
                     'tab' => 'Trình phát'
                 ]),
-            //    'value' => 5,
+                'value' => 5,
                 'active'      => 0,
             ],
             [
@@ -543,7 +543,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'view',
                     'view' => 'themes::selector'
                 ]),
-              //  'value' => 'default',
+                'value' => 'default',
                 'active'      => 0,
             ],
         ];
@@ -623,7 +623,7 @@ class SettingsTableSeeder extends Seeder
         }
 
         foreach ($players as $index => $setting) {
-            $result = Setting::firstOrCreate(collect($setting)->only('key')->toArray(), collect($setting)->merge(['group' => 'jwplayer'])->except('key')->toArray());
+            $result = Setting::updateOrCreate(collect($setting)->only('key')->toArray(), collect($setting)->merge(['group' => 'jwplayer'])->except('key')->toArray());
 
             if (!$result) {
                 $this->command->info("Insert failed at record $index");
