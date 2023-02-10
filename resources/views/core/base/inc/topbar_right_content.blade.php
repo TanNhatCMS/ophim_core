@@ -12,7 +12,7 @@
         <a class="dropdown-item" href="{{ backpack_url('quick-action/ping') }}">
             Ping SEO
         </a>
-        @if (!\Composer\InstalledVersions::isInstalled("appstract/laravel-opcache"))
+        @if (\Composer\InstalledVersions::isInstalled("appstract/laravel-opcache"))
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ backpack_url('quick-action/delete-opcache') }}">Xoá OpCache</a>
         @endif
