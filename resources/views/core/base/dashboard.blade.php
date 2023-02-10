@@ -204,7 +204,7 @@
                     @foreach ($top_view_total as $movie)
                         <tr>
                             <td><a href="{{ $movie->getUrl() }}">{{ $movie->name }}</a></td>
-                            <td class="text-right"><span class="badge badge-success"><i class="las la-eye"></i> {{ $movie->view_month }}</span></td>
+                            <td class="text-right"><span class="badge badge-success"><i class="las la-eye"></i> {{ $movie->view_total }}</span></td>
                         </tr>
                     @endforeach
                 </tbody>
