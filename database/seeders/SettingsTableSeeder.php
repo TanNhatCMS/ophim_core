@@ -402,6 +402,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
+                    'tab' => 'Trình phát'
                 ]),
            //     'value' => 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=',
                 'active'      => 0,
@@ -413,6 +414,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
+                    'tab' => 'Trình phát'
                 ]),
                 'active'      => 0,
             ],
@@ -423,6 +425,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'text',
+                    'tab' => 'Trình phát'
                 ]),
                 'active'      => 0,
             ],
@@ -439,7 +442,8 @@ class SettingsTableSeeder extends Seeder
                         'bottom-right' => 'Bottom right',
                         'bottom-left' => 'Dưới cùng bên trái',
                         'control-bar' => 'Control bar',
-                    ]
+                    ],
+                    'tab' => 'Trình phát'
                 ]),
                 'active'      => 0,
             ],
@@ -450,6 +454,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'ckfinder',
+                    'tab' => 'Trình phát'
                 ]),
                 'active'      => 0,
             ],
@@ -460,9 +465,70 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'number',
-                    'hint' => 'giây'
+                    'hint' => 'giây',
+                    'tab' => 'Trình phát'
                 ]),
             //    'value' => 5,
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'server_player_1',
+                'description' => 'server_player_1',
+                'name'        => 'Máy chủ phát video 1',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'hint' => 'tên miền 1',
+                    'tab' => 'Máy chủ phát'
+                ]),
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'server_player_2',
+                'description' => 'server_player_2',
+                'name'        => 'Máy chủ phát video 2',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'hint' => 'tên miền 2',
+                    'tab' => 'Máy chủ phát'
+                ]),
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'server_player_3',
+                'description' => 'server_player_3',
+                'name'        => 'Máy chủ phát video 3',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'hint' => 'tên miền 3',
+                    'tab' => 'Máy chủ phát'
+                ]),
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'server_player_4',
+                'description' => 'server_player_4',
+                'name'        => 'Máy chủ phát video 4',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'hint' => 'tên miền 4',
+                    'tab' => 'Máy chủ phát'
+                ]),
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'server_player_5',
+                'description' => 'server_player_5',
+                'name'        => 'Máy chủ phát video 5',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
+                    'hint' => 'tên miền 5',
+                    'tab' => 'Máy chủ phát'
+                ]),
                 'active'      => 0,
             ],
         ];
@@ -500,6 +566,16 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'code',
+                ]),
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'google_ads_id',
+                'description' => 'google_ads_id',
+                'name'        => 'Google ADS ID',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'text',
                 ]),
                 'active'      => 0,
             ],

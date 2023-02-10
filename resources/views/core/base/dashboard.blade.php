@@ -197,6 +197,23 @@
             <table class="table table-sm">
                 <thead>
                     <tr>
+                        <th colspan="2" scope="col">TOP NĂM</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    @foreach ($top_view_year as $movie)
+                        <tr>
+                            <td><a href="{{ $movie->getUrl() }}">{{ $movie->name }}</a></td>
+                            <td class="text-right"><span class="badge badge-success"><i class="las la-eye"></i> {{ $movie->view_year }}</span></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="p-3 col-md-3">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
                         <th colspan="2" scope="col">TOP TỔNG</th>
                     </tr>
                 </thead>

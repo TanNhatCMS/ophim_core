@@ -38,6 +38,7 @@ class AdminController extends Controller
         $this->data['count_themes'] = Theme::count();
         $this->data['count_users'] = User::count();
         $this->data['top_view_total'] = Movie::orderBy('view_total', 'desc')->limit(15)->get();
+        $this->data['top_view_year'] = Movie::orderBy('view_year', 'desc')->limit(15)->get();
         $this->data['top_view_day'] = Movie::orderBy('view_day', 'desc')->limit(15)->get();
         $this->data['top_view_week'] = Movie::orderBy('view_week', 'desc')->limit(15)->get();
         $this->data['top_view_month'] = Movie::orderBy('view_month', 'desc')->limit(15)->get();
