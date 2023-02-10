@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Prologue\Alerts\Facades\Alert;
 use Backpack\Settings\app\Models\Setting;
+use Appstract\Opcache\OpcacheFacade as OPcache;
 
 class QuickActionController extends Controller
 {
@@ -39,7 +40,7 @@ class QuickActionController extends Controller
      */
     public function delete_opcache()
     {
-        Artisan::call('opcache:clear');
+        OPcache::clear();
         Alert::success("Xóa opcache thành công")->flash();
         return back();
     }
