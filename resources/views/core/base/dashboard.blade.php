@@ -11,7 +11,7 @@
                 config('ophim.version') .
                 '</span><br>
                 Giao diện:<span class="text-danger text-break"> '.
-                    get_theme_info('display_name'). ' (V'.get_theme_version().')</span><br>Giao diện CURD:<span class="text-danger text-break">V'.get_crud_version().') </span>',
+                    get_theme_info('display_name'). ' (V'.get_theme_version().')</span><br>Giao diện CURD:<span class="text-danger text-break"> V'.get_crud_version().' </span>',
             'close_button' => true, // show close button or not
         ],
     ];
