@@ -35,6 +35,15 @@ if (!function_exists('get_theme_version')) {
         return  explode('@', \PackageVersions\Versions::getVersion(get_theme_info('package_name')) ?? 0)[0];
     }
 }
+if (!function_exists('get_crud_version')) {
+    function get_crud_version()
+    {
+        if (!\Composer\InstalledVersions::isInstalled('tannhatcms/crud')) {
+            return 'Unknown';
+        }
+        return  explode('@', \PackageVersions\Versions::getVersion('tannhatcms/crud') ?? 0)[0];
+    }
+}
 if (!function_exists('CheckPermission')) {
     function CheckPermission($key)
     {
