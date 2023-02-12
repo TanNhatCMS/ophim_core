@@ -13,14 +13,14 @@ use Ophim\Core\Database\Seeders\RegionsTableSeeder;
 use Ophim\Core\Database\Seeders\SettingsTableSeeder;
 use Ophim\Core\Database\Seeders\ThemesTableSeeder;
 
-class UpdateCommand extends Command
+class SetUpCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'ophim:update';
+    protected $signature = 'ophim:setup';
 
     /**
      * The console command description.
@@ -93,7 +93,7 @@ class UpdateCommand extends Command
             '--force' => true
         ]);
         $this->progressBar->advance();
-
+        
         $this->newLine(1);
         $this->info('vendor:publish players');
         $this->call('vendor:publish', [
@@ -104,6 +104,36 @@ class UpdateCommand extends Command
         $this->newLine(1);
         $this->info('installCKfinder');
         $this->installCKfinder();
+        $this->progressBar->advance();
+
+        $this->newLine(1);
+        $this->info('Migrate database');
+        $this->call('migrate', $this->option('no-interaction') ? ['--no-interaction' => true] : []);
+        $this->progressBar->advance();
+
+        $this->newLine(1);
+        $this->info('db:seed  SettingsTableSeeder');
+        $this->call('db:seed', [
+            'class' => SettingsTableSeeder::class,
+        ]);
+        $this->progressBar->advance();
+        $this->newLine(1);
+        $this->info('db:seed CatalogsTableSeeder');
+        $this->call('db:seed', [
+            'class' => CatalogsTableSeeder::class,
+        ]);
+        $this->progressBar->advance();
+        $this->newLine(1);
+        $this->info('db:seed MenusTableSeeder');
+        $this->call('db:seed', [
+            'class' => MenusTableSeeder::class,
+        ]);
+        $this->progressBar->advance();
+        $this->newLine(1);
+        $this->info('db:seed PermissionsSeeder');
+        $this->call('db:seed', [
+            'class' => PermissionsSeeder::class,
+        ]);
         $this->progressBar->advance();
         $this->progressBar->finish();
         $this->info('Ophim installation finished.');

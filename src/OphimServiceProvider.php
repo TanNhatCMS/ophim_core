@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Ophim\Core\Console\CreateUser;
 use Ophim\Core\Console\InstallCommand;
 use Ophim\Core\Console\UpdateCommand;
+use Ophim\Core\Console\SetUpCommand;
 use Ophim\Core\Console\GenerateMenuCommand;
 use Ophim\Core\Middleware\CKFinderAuth;
 use Ophim\Core\Models\Actor;
@@ -100,6 +101,7 @@ class OphimServiceProvider extends ServiceProvider
 
         $this->commands([
             InstallCommand::class,
+            SetUpCommand::class,
             UpdateCommand::class,
             CreateUser::class,
             GenerateMenuCommand::class,

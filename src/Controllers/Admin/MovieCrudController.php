@@ -575,6 +575,7 @@ class MovieCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->authorize('update', $this->crud->getEntryWithLocale($this->crud->getCurrentEntryId()));
+        $this->setupCreateOperation();
         CRUD::addField([
             'name' => 'timestamps', 
             'label' => 'Cập nhật thời gian', 
@@ -583,7 +584,7 @@ class MovieCrudController extends CrudController
             'onLabel' => '✓',
             'offLabel' => '✕', 
         ]);
-        $this->setupCreateOperation();
+        
     }
 
     public function store(Request $request)
