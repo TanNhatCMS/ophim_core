@@ -49,7 +49,7 @@ class UpdateCommand extends Command
      */
     public function handle()
     {
-        $this->progressBar = $this->output->createProgressBar(14);
+        $this->progressBar = $this->output->createProgressBar(6);
         $this->progressBar->minSecondsBetweenRedraws(0);
         $this->progressBar->maxSecondsBetweenRedraws(120);
         $this->progressBar->setRedrawFrequency(1);
@@ -100,33 +100,8 @@ class UpdateCommand extends Command
             '--tag' => 'players',
         ]);
         $this->progressBar->advance();
-
-        $this->newLine(1);
-        $this->info('installCKfinder');
-        $this->installCKfinder();
-        $this->progressBar->advance();
         $this->progressBar->finish();
         $this->info('Ophim installation finished.');
         return 0;
-    }
-
-    protected function installCKfinder()
-    {
-        $this->info('ckfinder:download');
-        $this->call('ckfinder:download');
-        $this->info('vendor:publish ckfinder-assets');
-        $this->call('vendor:publish', [
-            '--tag' => 'ckfinder-assets',
-        ]);
-        $this->progressBar->advance();
-        $this->newLine(1);
-        $this->info('vendor:publish ckfinder-config');
-        $this->call('vendor:publish', [
-            '--tag' => 'ckfinder-config',
-        ]);
-        $this->progressBar->advance();
-        $this->newLine(1);
-        $this->info('storage:link');
-        $this->call('storage:link');
     }
 }
