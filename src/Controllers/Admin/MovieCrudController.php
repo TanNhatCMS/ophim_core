@@ -644,7 +644,7 @@ class MovieCrudController extends CrudController
                 'name' => $studio
             ])->id;
         }
-        $request['timestamps'] = request('timeupdate') ?: false
+        $request['timestamps'] = request('timeupdate') ?: false;
         $request['actors'] = $actor_ids;
         $request['directors'] = $director_ids;
         $request['tags'] = $tag_ids;
