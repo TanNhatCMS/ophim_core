@@ -575,18 +575,7 @@ class MovieCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->authorize('update', $this->crud->getEntryWithLocale($this->crud->getCurrentEntryId()));
-
         $this->setupCreateOperation();
-        CRUD::addField([
-            'name' => 'timestamps', 
-            'label' => 'Cập nhật thời gian', 
-            'type' => 'switch', 
-            'color'    => 'primary', // May be any bootstrap color class or an hex color
-            'onLabel' => '✓',
-            'offLabel' => '✕', 
-            'value' => false,
-            'tab' => 'Danh sách tập phim'
-        ]);
     }
 
     public function store(Request $request)

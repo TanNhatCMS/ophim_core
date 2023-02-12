@@ -1,12 +1,29 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i>
+<li class="nav-item">
+    <a class="nav-link" href="{{ backpack_url('dashboard') }}">
+        <i class="la la-home nav-icon"></i>
     {{ trans('backpack::base.dashboard') }}</a></li>
 <li class="nav-title">Phim</li>
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon la la-list"></i>Quản lý phim 
+        <span class="badge badge-light rounded-pill bg-danger">{{count_episodes_error()}}</span>
+    </a>
+<ul class="nav-dropdown-items">
 <li class='nav-item'>
-<a class='nav-link' href='{{ backpack_url('movie') }}'><i class='nav-icon la la-play-circle'></i>
-    Quản lý phim</a>
+    <a class='nav-link' href='{{ backpack_url('movie') }}'>
+        <i class='nav-icon la la-pagelines'></i>Danh sách phim </a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('episode') }}'>
+    <i class='nav-icon la la-at'></i>Danh sách tập phim</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('episodereport') }}'>
+    <i class='nav-icon la la-link'></i>Phim lỗi  
+@if (count_episodes_error())
+<span class="badge badge-light rounded-pill bg-danger">{{count_episodes_error()}}</span>
+@endif
+</a>
 </li>
-
+</ul>
+</li>
 <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i
         class="nav-icon la la-list"></i> Phân loại</a>
 <ul class="nav-dropdown-items">
@@ -27,11 +44,6 @@
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('studio') }}'><i
                 class='nav-icon la la-connectdevelop'></i> Studio</a></li>
 </ul>
-</li>
-
-<li class='nav-item'>
-<a class='nav-link' href='{{ backpack_url('episode') }}'><i class='nav-icon la la-info-circle'></i>
-    Phim lỗi</a>
 </li>
 <li class='nav-item'>
     <a class='nav-link' href='{{ backpack_url('page') }}'>
@@ -62,7 +74,7 @@
             <span>SEO</span></a></li>
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting/group/jwplayer/edit') }}'><i
                 class='nav-icon la la-play'></i>
-            <span>Jwplayer</span></a></li>
+            <span>Trình phát video</span></a></li>
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting/group/others/edit') }}'><i
                 class='nav-icon la la-slack'></i>
             <span>Khác</span></a></li>

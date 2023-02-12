@@ -2,6 +2,7 @@
 
 use Backpack\Settings\app\Models\Setting;
 use Ophim\Core\Models\Theme;
+use Ophim\Core\Models\Episode;
 
 if (!function_exists('get_theme_option')) {
     function get_theme_option($key, $fallback = null)
@@ -83,3 +84,9 @@ if (!function_exists('ping_sitemap')) {
 //$data = file_get_contents("https://www.google.com/webmasters/tools/ping?sitemap={$sitemap}");
 //$status = ( strpos($data,"Sitemap Notification Received") !== false ) ? "OK" : "ERROR";
 //echo "Submitting Google Sitemap: {$status}\n";
+
+if (!function_exists('count_episodes_error')) {
+    function count_episodes_error($sitemapUrl){
+        return Episode::where('has_report', true)->count();
+    }
+}

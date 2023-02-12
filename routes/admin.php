@@ -32,6 +32,7 @@ Route::group([
     Route::crud('tag', 'TagCrudController');
     Route::crud('menu', 'MenuCrudController');
     Route::crud('episode', 'EpisodeCrudController');
+    Route::crud('episodereport', 'EpisodeReportCrudController');
     Route::crud('theme', 'ThemeManagementController');
     Route::crud('sitemap', 'SiteMapController');
     Route::get('quick-action/delete-cache', 'QuickActionController@delete_cache');
