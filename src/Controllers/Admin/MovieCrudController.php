@@ -576,14 +576,12 @@ class MovieCrudController extends CrudController
     {
         $this->authorize('update', $this->crud->getEntryWithLocale($this->crud->getCurrentEntryId()));
         CRUD::addField([
-            'name' => 'timeupdate', 
+            'name' => 'timestamps', 
             'label' => 'Cập nhật thời gian', 
             'type' => 'switch', 
             'color'    => 'primary', // May be any bootstrap color class or an hex color
             'onLabel' => '✓',
             'offLabel' => '✕', 
-            'fake'     => true,
-            'value' => false,
         ]);
         $this->setupCreateOperation();
     }
@@ -644,7 +642,6 @@ class MovieCrudController extends CrudController
                 'name' => $studio
             ])->id;
         }
-        $request['timestamps'] = request('timeupdate') ?: false;
         $request['actors'] = $actor_ids;
         $request['directors'] = $director_ids;
         $request['tags'] = $tag_ids;
