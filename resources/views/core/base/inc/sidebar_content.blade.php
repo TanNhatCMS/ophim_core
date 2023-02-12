@@ -4,25 +4,17 @@
         <i class="la la-home nav-icon"></i>
     {{ trans('backpack::base.dashboard') }}</a></li>
 <li class="nav-title">Phim</li>
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon la la-list"></i>Quản lý phim 
-        <span class="badge badge-light rounded-pill bg-danger">{{count_episodes_error()}}</span>
-    </a>
-<ul class="nav-dropdown-items">
 <li class='nav-item'>
     <a class='nav-link' href='{{ backpack_url('movie') }}'>
-        <i class='nav-icon la la-pagelines'></i>Danh sách phim </a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('episode') }}'>
-    <i class='nav-icon la la-at'></i>Danh sách tập phim</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('episodereport') }}'>
-    <i class='nav-icon la la-link'></i>Phim lỗi  
+        <i class='nav-icon la la-play-circle'></i></i>Quản lý phim  </a></li>
+    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('episodereport') }}'>
+    <i class='nav-icon la la-info-circle'></i></i>Phim lỗi  
 @if (count_episodes_error())
 <span class="badge badge-light rounded-pill bg-danger">{{count_episodes_error()}}</span>
 @endif
 </a>
 </li>
-</ul>
+
 </li>
 <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i
         class="nav-icon la la-list"></i> Phân loại</a>
