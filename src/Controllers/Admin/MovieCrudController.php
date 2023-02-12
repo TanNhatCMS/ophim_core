@@ -578,7 +578,7 @@ class MovieCrudController extends CrudController
 
         $this->setupCreateOperation();
         CRUD::addField([
-            'name' => 'timestamps_update', 
+            'name' => 'timestamps', 
             'label' => 'Cập nhật thời gian', 
             'type' => 'switch', 
             'color'    => 'primary', // May be any bootstrap color class or an hex color
@@ -645,7 +645,6 @@ class MovieCrudController extends CrudController
                 'name' => $studio
             ])->id;
         }
-        $request['timestamps'] = request('timestamps_update', false);
         $request['actors'] = $actor_ids;
         $request['directors'] = $director_ids;
         $request['tags'] = $tag_ids;
