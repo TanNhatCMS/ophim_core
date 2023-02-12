@@ -584,7 +584,6 @@ class MovieCrudController extends CrudController
             'color'    => 'primary', // May be any bootstrap color class or an hex color
             'onLabel' => '✓',
             'offLabel' => '✕', 
-            'tab' => 'Danh sách tập phim',
             'value' => false,
         ]);
     }
