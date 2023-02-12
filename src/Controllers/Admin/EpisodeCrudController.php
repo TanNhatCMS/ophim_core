@@ -221,7 +221,7 @@ class EpisodeCrudController extends CrudController
             'view' => 'ophim::movies.inc.episode',
             'tab' => 'Danh sách tập phim'
         ],);
-        
+
         CRUD::addField([
             'name' => 'timestamps', 
             'label' => 'Cập nhật thời gian', 
@@ -234,53 +234,8 @@ class EpisodeCrudController extends CrudController
         ]);
     }
 
-
     public function update(Request $request)
     {
-        $actors = request('actors', []);
-        $directors = request('directors', []);
-        $tags = request('tags', []);
-        $studios = request('studios', []);
-
-        $actor_ids = [];
-        foreach ($actors as $actor) {
-            $actor_ids[] = Actor::firstOrCreate([
-                'name_md5' => md5($actor)
-            ], [
-                'name' => $actor
-            ])->id;
-        }
-
-        $director_ids = [];
-        foreach ($directors as $director) {
-            $director_ids[] = Director::firstOrCreate([
-                'name_md5' => md5($director)
-            ], [
-                'name' => $director
-            ])->id;
-        }
-
-        $tag_ids = [];
-        foreach ($tags as $tag) {
-            $tag_ids[] = Tag::firstOrCreate([
-                'name_md5' => md5($tag)
-            ], [
-                'name' => $tag
-            ])->id;
-        }
-
-        $studio_ids = [];
-        foreach ($studios as $studio) {
-            $studio_ids[] = Studio::firstOrCreate([
-                'name_md5' => md5($studio)
-            ], [
-                'name' => $studio
-            ])->id;
-        }
-        $request['actors'] = $actor_ids;
-        $request['directors'] = $director_ids;
-        $request['tags'] = $tag_ids;
-        $request['studios'] = $studio_ids;
         return $this->backpackUpdate();
     }
 

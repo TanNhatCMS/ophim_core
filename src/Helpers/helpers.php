@@ -86,7 +86,7 @@ if (!function_exists('ping_sitemap')) {
 //echo "Submitting Google Sitemap: {$status}\n";
 
 if (!function_exists('count_episodes_error')) {
-    function count_episodes_error($sitemapUrl){
+    function count_episodes_error(){
         return Episode::where('has_report', true)->count();
     }
 }
