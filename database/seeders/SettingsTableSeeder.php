@@ -553,6 +553,7 @@ class SettingsTableSeeder extends Seeder
                 'field'       => json_encode([
                     'name' => 'value',
                     'type' => 'switch',
+                    
                 ]),
                 'value' => 'default',
                 'active'      => 0,

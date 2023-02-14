@@ -46,13 +46,12 @@ class QuickActionController extends Controller
     }
     public function turn_ads()
     {
-        $status = setting('hide_ads_boss', false);
-        if($status){
+        if(setting('hide_ads_boss')=='1'){
             $msg = "Tắt";
-            $value = true;
+            $value = '1';
         }else{
             $msg = "Mở";
-            $value = false;
+            $value = '0';
         }
         Setting::where('id', 'hide_ads_boss')->update([
             'value' => $value
