@@ -38,6 +38,7 @@ Route::group([
     Route::get('quick-action/delete-cache', 'QuickActionController@delete_cache');
     Route::get('quick-action/ping', 'QuickActionController@ping');
     Route::get('quick-action/delete-opcache', 'QuickActionController@delete_opcache');
+    Route::get('quick-action/turn-ads', 'QuickActionController@turn_ads');
 });
 
 Route::group([

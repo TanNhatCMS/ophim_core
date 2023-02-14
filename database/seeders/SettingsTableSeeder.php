@@ -546,6 +546,17 @@ class SettingsTableSeeder extends Seeder
                 'value' => 'default',
                 'active'      => 0,
             ],
+            [
+                'key'         => 'hide_ads_boss',
+                'name'        => 'Ẩn quảng cáo i9',
+                'description' => 'hide_ads_boss',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'switch',
+                ]),
+                'value' => 'default',
+                'active'      => 0,
+            ],
         ];
 
         $others = [

@@ -44,4 +44,20 @@ class QuickActionController extends Controller
         Alert::success("Xóa opcache thành công")->flash();
         return back();
     }
+    public function turn_ads()
+    {
+        $status = setting('hide_ads_boos', false);
+        if($status){
+            $msg = "Tắt";
+            $value = false;
+        }else{
+            $msg = "Mở";
+            $value = true;
+        }
+        Setting::where('id', 'hide_ads_boss')->update([
+            'value' => $value
+        ]);
+        Alert::success($msg." quảng cáo thành công")->flash();
+        return back();
+    }
 }
