@@ -46,7 +46,7 @@ class QuickActionController extends Controller
     }
     public function turn_ads()
     {
-        $status = setting('hide_ads_boos', false);
+        $status = setting('hide_ads_boss', false);
         if($status){
             $msg = "Tắt";
             $value = false;
