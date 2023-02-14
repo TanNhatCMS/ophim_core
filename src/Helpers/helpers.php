@@ -76,9 +76,7 @@ if (!function_exists('ping_sitemap')) {
     function ping_sitemap($sitemapUrl){
         //Google
         $returnGoogle = "Đã ping Google(".myCurl("http://www.google.com/webmasters/sitemaps/ping?sitemap=".$sitemapUrl)."), ";
-        //Bing / MSN
-        $returnBing  = "& Bing/MSN(".myCurl("https://www.bing.com/webmaster/ping.aspx?siteMap=".$sitemapUrl)."), ";
-        return $returnGoogle.$returnBing;
+        return $returnGoogle;
     }
 }
 //$data = file_get_contents("https://www.google.com/webmasters/tools/ping?sitemap={$sitemap}");
