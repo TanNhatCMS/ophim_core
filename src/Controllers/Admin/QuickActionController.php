@@ -49,10 +49,10 @@ class QuickActionController extends Controller
         $status = setting('hide_ads_boss', false);
         if($status){
             $msg = "Tắt";
-            $value = false;
+            $value = true;
         }else{
             $msg = "Mở";
-            $value = true;
+            $value = false;
         }
         Setting::where('id', 'hide_ads_boss')->update([
             'value' => $value

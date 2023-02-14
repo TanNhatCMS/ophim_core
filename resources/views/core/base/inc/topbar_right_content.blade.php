@@ -8,10 +8,10 @@
     <div
         class="dropdown-menu {{ config('backpack.base.html_direction') == 'rtl' ? 'dropdown-menu-left' : 'dropdown-menu-right' }} mr-4 pb-1 pt-1">
         <a class="dropdown-item" href="{{ backpack_url('quick-action/turn-ads') }}">
-            @if (setting('hide_ads_boos', false))
-                <p class="bg-primary text-white">Tắt quảng cáo I9</p>
-            @else
+            @if (setting('hide_ads_boss', true))
                 <p class="bg-danger text-white">Mở quảng cáo I9</p>
+            @else
+                <p class="bg-primary text-white">Tắt quảng cáo I9</p>
             @endif
         </a>
         <div class="dropdown-divider"></div>
