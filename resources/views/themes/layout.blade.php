@@ -23,7 +23,9 @@
     {!! get_theme_option('additional_header_js') !!}
 </head>
 
-<body {!! get_theme_option('body_attributes', '') !!}>
+<body 
+@yield('body_attributes')
+{!! get_theme_option('body_attributes', '') !!}>
     @yield('body')
     {!! get_theme_option('additional_body_js') !!}
 
