@@ -24,11 +24,10 @@
 </head>
 
 <body 
-@yield('body_attributes')
+@stack('body_attributes')
 {!! get_theme_option('body_attributes', '') !!}>
     @yield('body')
     {!! get_theme_option('additional_body_js') !!}
-
     @yield('footer')
     @stack('scripts')
     {!! get_theme_option('additional_footer_js') !!}
