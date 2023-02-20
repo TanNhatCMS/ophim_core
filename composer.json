@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^6|^7|^8|^9|^10",
+        "laravel/framework": "^6|^7|^8|^9|^10.0",
         "ckfinder/ckfinder-laravel-package": "v3.5.2.1",
         "tannhatcms/laravel-caching-model": "^1.0.0",
         "tannhatcms/crud": "^1.0.0",
@@ -36,5 +36,5 @@
             ]
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
