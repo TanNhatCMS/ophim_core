@@ -16,7 +16,7 @@
         "tannhatcms/settings": "*",
         "tannhatcms/permissionmanager": "*",
         "spatie/laravel-sitemap": "^6.5.2",
-        "artesaos/seotools": "v1.1.0"
+        "artesaos/seotools": "^v1.1.0"
     },
     "replace": {
         "hacoidev/ophim-core":"*"
