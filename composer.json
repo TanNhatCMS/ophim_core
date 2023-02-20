@@ -11,12 +11,12 @@
     "require": {
         "laravel/framework": "^6|^7|^8|^9|^10.0",
         "tannhatcms/ckfinder-laravel-package": "*",
-        "tannhatcms/laravel-caching-model": "^1.0.0",
-        "tannhatcms/crud": "^1.0.0",
-        "tannhatcms/settings": "^1.0.0",
-        "tannhatcms/permissionmanager": "^1.0.0",
-        "spatie/laravel-sitemap": "^5.8",
-        "artesaos/seotools": "^v0.22.1"
+        "tannhatcms/laravel-caching-model": "*",
+        "tannhatcms/crud": "*",
+        "tannhatcms/settings": "*",
+        "tannhatcms/permissionmanager": "*",
+        "spatie/laravel-sitemap": "*",
+        "artesaos/seotools": "*"
     },
     "replace": {
         "hacoidev/ophim-core":"*"
