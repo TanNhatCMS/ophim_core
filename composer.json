@@ -15,7 +15,7 @@
         "tannhatcms/crud": "*",
         "tannhatcms/settings": "*",
         "tannhatcms/permissionmanager": "*",
-        "spatie/laravel-sitemap": "*",
+        "spatie/laravel-sitemap": "^6.5.2",
         "artesaos/seotools": "*"
     },
     "replace": {
