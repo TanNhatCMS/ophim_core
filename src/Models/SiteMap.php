@@ -22,7 +22,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\SitemapIndex;
 use Spatie\Sitemap\Tags\Url;
 
-class SiteMap 
+class SiteMaps 
 {
 
 
