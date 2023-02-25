@@ -146,4 +146,9 @@ class Region extends Model implements TaxonomyInterface, Cacheable, SeoInterface
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+    /**
+     */
+    public function __construct() {
+    }
 }
