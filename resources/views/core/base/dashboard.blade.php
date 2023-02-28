@@ -5,7 +5,7 @@
         [
             'type' => 'alert',
             'class' => 'alert alert-dark mb-2 col-12',
-            'heading' => '8Anime CMS',
+            'heading' => '3Anime CMS',
             'content' =>
                 'Phiên bản: <span class="text-danger text-break"> V' .
                 config('ophim.version') .
