@@ -59,7 +59,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'text',
                     'tab' => 'Cài đặt chung'
                 ]),
-               // 'value' => 'Ophim.TV',
+                'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
@@ -82,7 +82,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'text',
                     'tab' => 'Cài đặt chung'
                 ]),
-                //'value' => 'Phim hay mới cập nhật 2022',
+                'value' => 'Phim hay mới cập nhật 2022',
                 'active'      => 0,
             ],
             [
@@ -94,7 +94,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'textarea',
                     'tab' => 'Cài đặt chung'
                 ]),
-             //   'value' => 'Ophim.TV',
+                'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
@@ -106,7 +106,7 @@ class SettingsTableSeeder extends Seeder
                     'type' => 'textarea',
                     'tab' => 'Cài đặt chung'
                 ]),
-              //  'value' => 'Ophim.TV',
+                'value' => 'Ophim.TV',
                 'active'      => 0,
             ],
             [
@@ -142,7 +142,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin phim: {name}|{origin_name}|{language}|{quality}|{episode_current}|{publish_year}|...',
                     'tab' => 'Phim'
                 ]),
-               // 'value' => 'Phim {name}',
+                'value' => 'Phim {name}',
                 'active'      => 0,
             ],
             [
@@ -155,7 +155,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin phim: {movie.name}|{movie.origin_name}|{movie.language}|{movie.quality}|{movie.episode_current}|movie.publish_year}|...<br />Thông tin tập: {name}',
                     'tab' => 'Phim'
                 ]),
-                //'value' => 'Xem phim {movie.name} tập {name} {movie.language} {movie.quality}',
+                'value' => 'Xem phim {movie.name} tập {name} {movie.language} {movie.quality}',
                 'active'      => 0,
             ],
             [
@@ -168,7 +168,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-               // 'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
@@ -181,7 +181,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-              //  'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
@@ -194,7 +194,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Thể Loại'
                 ]),
-               // 'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
@@ -207,7 +207,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-               // 'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
@@ -220,7 +220,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-               // 'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
@@ -233,7 +233,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Quốc Gia'
                 ]),
-             //   'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
@@ -246,7 +246,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-              //  'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
+                'value' => 'Danh sách phim {name} - tổng hợp phim {name}',
                 'active'      => 0,
             ],
             [
@@ -259,7 +259,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-             //   'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
+                'value' => 'Phim {name} mới nhất tuyển chọn hay nhất. Top những bộ phim {name} đáng để bạn cày 2022',
                 'active'      => 0,
             ],
             [
@@ -272,7 +272,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Studio'
                 ]),
-              //  'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
+                'value' => 'Xem phim {name},Phim {name} mới,Phim {name} 2022,phim hay',
                 'active'      => 0,
             ],
             [
@@ -285,7 +285,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-             //   'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
+                'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
@@ -298,7 +298,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-             //   'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
+                'value' => 'Phim của diễn viên {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
@@ -311,7 +311,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Diễn Viên'
                 ]),
-             //   'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
+                'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
                 'active'      => 0,
             ],
             [
@@ -324,7 +324,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-             //   'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
+                'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
@@ -337,7 +337,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-             //   'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
+                'value' => 'Phim của đạo diễn {name} - tổng hợp phim {name} hay nhất',
                 'active'      => 0,
             ],
             [
@@ -350,7 +350,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Đạo Diễn'
                 ]),
-             //   'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
+                'value' => 'xem phim {name},phim {name},tuyen tap phim {name}',
                 'active'      => 0,
             ],
             [
@@ -363,7 +363,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-              //  'value' => 'Phim {name} vietsub - phim {name} full hd',
+                'value' => 'Phim {name} vietsub - phim {name} full hd',
                 'active'      => 0,
             ],
             [
@@ -376,7 +376,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-             //   'value' => 'Phim {name} vietsub - phim {name} full hd',
+                'value' => 'Phim {name} vietsub - phim {name} full hd',
                 'active'      => 0,
             ],
             [
@@ -389,7 +389,7 @@ class SettingsTableSeeder extends Seeder
                     'hint' => 'Thông tin: {name}',
                     'tab' => 'Tag'
                 ]),
-             //   'value' => 'xem phim {name},phim {name},{name} vietsub',
+                'value' => 'xem phim {name},phim {name},{name} vietsub',
                 'active'      => 0,
             ]
         ];
