@@ -148,9 +148,9 @@ class OphimServiceProvider extends ServiceProvider
 
         config(['cachebusting_string' => \PackageVersions\Versions::getVersion('tannhatcms/crud')]);
 
-        config(['backpack.base.project_logo' => '<b>8Anime</b>']);
-        config(['backpack.base.developer_name' => '8Anime']);
-        config(['backpack.base.developer_link' => 'https://8anime.net']);
+        config(['backpack.base.project_logo' => '<b>3Anime</b>']);
+        config(['backpack.base.developer_name' => '3Anime']);
+        config(['backpack.base.developer_link' => 'https://3anime.tv']);
         config(['backpack.base.show_powered_by' => false]);
     }
 
