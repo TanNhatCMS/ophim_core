@@ -11,8 +11,7 @@
                 config('ophim.version') .
                 '</span><br>
                 Giao diện:<span class="text-danger text-break"> '.
-                    get_theme_info('display_name'). ' (V'.get_theme_version().')</span><br>Giao diện CURD:<span class="text-danger text-break"> V'.get_crud_version().' </span>',
-            'close_button' => true, // show close button or not
+                    get_theme_info('display_name'). ' (V'.get_theme_version().')</span><br>Phiên bản CRUD:<span class="text-danger text-break"> V'.get_crud_version().' </span>',            'close_button' => true, // show close button or not
         ],
     ];
 @endphp
@@ -137,7 +136,7 @@
             <div class="card-counter">
                 <i class="las la-puzzle-piece"></i>
                 <span class="count-numbers counter">{{ count(config('plugins', [])) }}</span>
-                <span class="count-name">Plugins</span>
+                <span class="count-name">Gói mở rộng</span>
             </div>
         </div>
     </div>
