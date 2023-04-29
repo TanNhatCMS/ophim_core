@@ -78,7 +78,7 @@ class PermissionsSeeder extends Seeder
             'Update plugin',
             'Customize theme',
         ];
-        $update = [
+        $permissions_list = [
             'Browse actor' => 'Duyệt diễn viên',
             'Create actor' => 'Tạo diễn viên',
             'Update actor' => 'Cập nhật diễn viên',
@@ -103,7 +103,7 @@ class PermissionsSeeder extends Seeder
             'Create category' =>  'Tạo Thể loại',
             'Update category' => 'Cập nhật Thể loại',
             'Delete category' => 'Xóa Thể loại',
-            'Browse region' => 'Browse Quốc gia',
+            'Browse region' => 'Duyệt Quốc gia',
             'Create region' => 'Tạo Quốc gia',
             'Update region' => 'Cập nhật Quốc gia',
             'Delete region' => 'Xoá Quốc gia',
@@ -112,7 +112,7 @@ class PermissionsSeeder extends Seeder
             'Update crawl schedule' => 'Cập nhật lịch trình crawl',
             'Delete crawl schedule' => 'Xóa lịch trình crawl',
             'Browse movie' => 'Duyệt phim',
-            'Create movie' => 'Create phim',
+            'Create movie' => 'Tạo phim',
             'Update movie' => 'Cập nhật phim',
             'Delete movie' => 'Xóa phim',
             'Browse user' => 'Duyệt người dùng',
@@ -140,18 +140,20 @@ class PermissionsSeeder extends Seeder
             'Update plugin' => 'Cập nhật plugin',
             'Customize theme' => 'Tùy chỉnh chủ đề',
         ];
-        $admin = Role::firstOrCreate(['name' => "Admin", 'guard_name' => 'backpack']);
-        foreach ($permissions as $index => $permission) {
+        $admin = Role::firstOrCreate([
+            'name' => "Admin",
+            'guard_name' => 'backpack',
+            'title' => "Quản trị viên"
+        ]);
+        foreach ($permissions_list as $permission => $title) {
             $result = Permission::firstOrCreate([
                 'name' => $permission,
-                'guard_name' => 'backpack'
+                'guard_name' => 'backpack',
+                'title' => $title
             ]);
-
             $admin->givePermissionTo($permission);
-
             if (!$result) {
-                $this->command->info("Insert failed at record $index.");
-
+                $this->command->info("Insert failed at record $permission.");
                 return;
             }
         }
