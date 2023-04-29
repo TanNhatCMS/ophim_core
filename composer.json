@@ -15,11 +15,11 @@
         "tannhatcms/crud": "*",
         "tannhatcms/settings": "*",
         "tannhatcms/permissionmanager": "*",
-        "spatie/laravel-sitemap": "^6.5.2",
+        "tannhatcms/laravel-sitemap": "*",
         "tannhatcms/seotools": "*"
     },
     "replace": {
-        "hacoidev/ophim-core":"*"
+        "hacoidev/ophim-core": "*"
     },
     "license": "MIT",
     "autoload": {
