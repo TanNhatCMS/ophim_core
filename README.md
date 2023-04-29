@@ -77,9 +77,13 @@ php artisan optimize:clear
 4. Clear PHP Opcache in server (if enabled)
 
 # Note
+- Command:
+    + Generate menu categories & regions: `php artisan ophim:menu:generate`
+
 - Configure a production environment file `.env`
     + `APP_NAME=your_app_name`
     + `APP_ENV=production`
+    + `APP_DEBUG=false`
     + `APP_URL=https://your-domain.com`
 - Configure timezone `/config/app.php`
     + `'timezone' => 'Asia/Ho_Chi_Minh'`
