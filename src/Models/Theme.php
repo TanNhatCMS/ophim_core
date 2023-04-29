@@ -42,7 +42,8 @@ class Theme extends Model implements Cacheable
         if (!\Composer\InstalledVersions::isInstalled($this->package_name)) {
             return 'Unknown';
         }
-        return  explode('@', \PackageVersions\Versions::getVersion($this->package_name) ?? 0)[0];
+
+        return  \PackageVersions\Versions::getVersion($this->package_name);
     }
 
     public function getOptionsAttribute()
@@ -58,24 +59,28 @@ class Theme extends Model implements Cacheable
 
     public function editBtn($crud = false)
     {
-        return '<a href="' . backpack_url("theme/{$this->id}/edit") . '" class="btn btn-primary">Cài đặt</a>';
+        return '<a href="' . backpack_url("theme/{$this->id}/edit") . '" class="btn btn-primary">Edit</a>';
     }
-    public function delete(Request $request, $id)
-    {
-        if (!backpack_user()->hasPermissionTo('Customize theme')) {
-            abort(403);
-        }
-        $theme = Theme::fromCache()->find($id);
-        if (is_null($theme)) {
-            Alert::warning("Không tìm thấy dữ liệu giao diện")->flash();
-            return redirect(backpack_url('theme'));
-        }
-        // delete row from db
-        $theme->delete();
 
-        Alert::success("Xóa giao diện thành công!")->flash();
-        return redirect(backpack_url('theme'));
+    public function deleteBtn($crud = false)
+    {
+        if ($this->getVersionAttribute() === 'Unknown') {
+
+            $template = <<<EOT
+            <form action="{actionRoute}" method="post" onsubmit="return confirm('Chắc chắn muốn xóa giao diện {display_name}?. ');" style="display: inline">
+                {csrfField}
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+            EOT;
+            $html = str_replace("{actionRoute}", backpack_url("theme/{$this->id}/delete"), $template);
+            $html = str_replace("{csrfField}", csrf_field(), $html);
+            $html = str_replace("{display_name}", $this->display_name, $html);
+
+            return $html;
+        }
+        return '';
     }
+
     public function activeBtn($crud = false)
     {
         $template = <<<EOT
@@ -90,13 +95,12 @@ class Theme extends Model implements Cacheable
         $html = str_replace("{display_name}", $this->display_name, $html);
 
         if ($this->active) {
-            $html = str_replace("{name}", 'Kích hoạt lại', $html);
+            $html = str_replace("{name}", 'Re-Activate', $html);
             $html = str_replace("{btnType}", 'btn-secondary', $html);
         } else {
-            $html = str_replace("{name}", 'Kích hoạt', $html);
+            $html = str_replace("{name}", 'Activate', $html);
             $html = str_replace("{btnType}", 'btn-primary', $html);
         }
-
 
         return $html;
     }
@@ -113,7 +117,7 @@ class Theme extends Model implements Cacheable
         $html = str_replace("{actionRoute}", backpack_url("theme/{$this->id}/reset"), $template);
         $html = str_replace("{csrfField}", csrf_field(), $html);
         $html = str_replace("{btnType}", 'btn-warning', $html);
-        $html = str_replace("{name}", 'Đặt về mặc định', $html);
+        $html = str_replace("{name}", 'Reset', $html);
 
         return $html;
     }

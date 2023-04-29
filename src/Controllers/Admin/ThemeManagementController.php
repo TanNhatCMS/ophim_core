@@ -109,7 +109,22 @@ class ThemeManagementController extends CrudController
         }
     }
 
+    public function delete(Request $request, $id)
+    {
+        if (!backpack_user()->hasPermissionTo('Customize theme')) {
+            abort(403);
+        }
+        $theme = Theme::fromCache()->find($id);
+        if (is_null($theme)) {
+            Alert::warning("Không tìm thấy dữ liệu giao diện")->flash();
+            return redirect(backpack_url('theme'));
+        }
+        // delete row from db
+        $theme->delete();
 
+        Alert::success("Xóa giao diện thành công!")->flash();
+        return redirect(backpack_url('theme'));
+    }
 
     /**
      * Show the form for editing the specified resource.
