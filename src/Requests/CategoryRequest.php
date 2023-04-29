@@ -25,7 +25,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:255',
+            'name' => 'required|max:255',
             'slug' => 'max:255|unique:categories,slug,' . $this->id . ',id',
             'seo_title' => 'string|max:255',
             'seo_des' => 'string|max:255',
