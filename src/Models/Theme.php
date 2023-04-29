@@ -60,7 +60,22 @@ class Theme extends Model implements Cacheable
     {
         return '<a href="' . backpack_url("theme/{$this->id}/edit") . '" class="btn btn-primary">Cài đặt</a>';
     }
+    public function delete(Request $request, $id)
+    {
+        if (!backpack_user()->hasPermissionTo('Customize theme')) {
+            abort(403);
+        }
+        $theme = Theme::fromCache()->find($id);
+        if (is_null($theme)) {
+            Alert::warning("Không tìm thấy dữ liệu giao diện")->flash();
+            return redirect(backpack_url('theme'));
+        }
+        // delete row from db
+        $theme->delete();
 
+        Alert::success("Xóa giao diện thành công!")->flash();
+        return redirect(backpack_url('theme'));
+    }
     public function activeBtn($crud = false)
     {
         $template = <<<EOT

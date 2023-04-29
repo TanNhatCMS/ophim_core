@@ -47,6 +47,11 @@ class ThemeManagementController extends CrudController
             'uses'      => $controller . '@reset',
             'operation' => 'update',
         ]);
+        Route::post($segment . '/{id}/delete', [
+            'as'        => $routeName . '.delete',
+            'uses'      => $controller . '@delete',
+            'operation' => 'update',
+        ]);
     }
 
     /**
@@ -82,6 +87,7 @@ class ThemeManagementController extends CrudController
         $this->crud->addButtonFromModelFunction('line', 'editBtn', 'editBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'resetBtn', 'resetBtn', 'beginning');
         $this->crud->addButtonFromModelFunction('line', 'activeBtn', 'activeBtn', 'beginning');
+        $this->crud->addButtonFromModelFunction('line', 'deleteBtn', 'deleteBtn', '');
     }
 
     /**
