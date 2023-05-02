@@ -2,7 +2,7 @@
 
 namespace Ophim\Core\Console;
 
-use Backpack\Settings\app\Models\SiteMaps;
+use Ophim\Core\Models\SiteMaps;
 use Backpack\Settings\app\Models\Setting;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -58,7 +58,7 @@ class SiteMapCommand extends Command
         $this->progressBar->start();
         $this->newLine(1);
         $this->info('SiteMap update');
-        $this->info(Sitemaps::updateSitemap(true));
+        $this->info(SiteMaps::updateSitemap(true));
         $this->progressBar->advance();
         $this->progressBar->finish();
         $this->info('Cập nhật Site xong.');
