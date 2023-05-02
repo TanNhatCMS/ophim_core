@@ -13,6 +13,7 @@ use Ophim\Core\Console\InstallCommand;
 use Ophim\Core\Console\UpdateCommand;
 use Ophim\Core\Console\SetUpCommand;
 use Ophim\Core\Console\GenerateMenuCommand;
+use Ophim\Core\Console\SiteMapCommand;
 use Ophim\Core\Middleware\CKFinderAuth;
 use Ophim\Core\Models\Actor;
 use Ophim\Core\Models\Catalog;
