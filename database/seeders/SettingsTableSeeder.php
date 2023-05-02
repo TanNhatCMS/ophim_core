@@ -736,6 +736,7 @@ class SettingsTableSeeder extends Seeder
                 'description' => 'Thông Báo',
                 'field'       => json_encode([
                     'name' => 'value',
+                    'label' => 'Nội dung thông báo',
                     'type' => 'code',
                 ]),
                 'value' => '',
