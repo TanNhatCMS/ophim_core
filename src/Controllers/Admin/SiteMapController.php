@@ -70,6 +70,6 @@ class SiteMapController extends CrudController
 
     public function store(Request $request)
     {
-        SiteMaps::update_sitemap(true, true);
+        SiteMaps::updateSitemap(true, true);
     }
 }

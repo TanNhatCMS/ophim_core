@@ -24,7 +24,7 @@ class SiteMaps
 {
 
 
-    private static function render_styles()
+    private static function renderStyles()
     {
         $xml = view('ophim::sitemap/styles', [
             'title' => Setting::get('site_homepage_title'),
@@ -35,9 +35,9 @@ class SiteMaps
         return;
     }
 
-    private static function add_styles($file_name)
+    private static function addStyles($fileName)
     {
-        $path = public_path($file_name);
+        $path = public_path($fileName);
         if(file_exists($path)) {
             $content = file_get_contents($path);
             $content = str_replace('?'.'>', '?'.'>'.'<'.'?'.'xml-stylesheet type="text/xsl" href="'. LARURL::to('/') .'/main-sitemap.xsl"?'.'>', $content);
@@ -45,21 +45,23 @@ class SiteMaps
         }
     }
 
-    public static function update_sitemap($ping = false, $alert = false)
+    public static function updateSitemap($ping = false, $alert = false)
     {
-        $this->render_styles();
-        if (!File::isDirectory('sitemap')) File::makeDirectory('sitemap', 0777, true, true);
+        self::renderStyles();
+        if (!File::isDirectory('sitemap')){
+            File::makeDirectory('sitemap', 0777, true, true);
+        }
+        
+        $sitemapIndex = SitemapIndex::create();
 
-        $sitemap_index = SitemapIndex::create();
-
-        $sitemap_page = Sitemap::create();
-        $sitemap_page->add(Url::create('/')
+        $sitemapPage = Sitemap::create();
+        $sitemapPage->add(Url::create('/')
             ->setLastModificationDate(now())
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_HOURLY)
             ->setPriority(1));
-        Catalog::chunkById(100, function ($catalogs) use ($sitemap_page) {
+        Catalog::chunkById(100, function ($catalogs) use ($sitemapPage) {
             foreach ($catalogs as $catalog) {
-                $sitemap_page->add(
+                $sitemapPage->add(
                     Url::create($catalog->getUrl())
                         ->setLastModificationDate(now())
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
@@ -67,14 +69,14 @@ class SiteMaps
                 );
             }
         });
-        $sitemap_page->writeToFile(public_path('sitemap/catalogs-sitemap.xml'));
-        $this->add_styles('sitemap/catalogs-sitemap.xml');
-        $sitemap_index->add('sitemap/catalogs-sitemap.xml');
+        $sitemapPage->writeToFile(public_path('sitemap/catalogs-sitemap.xml'));
+        self::addStyles('sitemap/catalogs-sitemap.xml');
+        $sitemapIndex->add('sitemap/catalogs-sitemap.xml');
 
-        $sitemap_categories = Sitemap::create();
-        Category::chunkById(100, function ($categoires) use ($sitemap_categories) {
+        $sitemapCategories = Sitemap::create();
+        Category::chunkById(100, function ($categoires) use ($sitemapCategories) {
             foreach ($categoires as $category) {
-                $sitemap_categories->add(
+                $sitemapCategories->add(
                     Url::create($category->getUrl())
                         ->setLastModificationDate(now())
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
@@ -82,14 +84,14 @@ class SiteMaps
                 );
             }
         });
-        $sitemap_categories->writeToFile(public_path('sitemap/categories-sitemap.xml'));
-        $this->add_styles('sitemap/categories-sitemap.xml');
-        $sitemap_index->add('sitemap/categories-sitemap.xml');
+        $sitemapCategories->writeToFile(public_path('sitemap/categories-sitemap.xml'));
+        self::addStyles('sitemap/categories-sitemap.xml');
+        $sitemapIndex->add('sitemap/categories-sitemap.xml');
 
-        $sitemap_regions = Sitemap::create();
-        Region::chunkById(100, function ($regions) use ($sitemap_regions) {
+        $sitemapRegions = Sitemap::create();
+        Region::chunkById(100, function ($regions) use ($sitemapRegions) {
             foreach ($regions as $region) {
-                $sitemap_regions->add(
+                $sitemapRegions->add(
                     Url::create($region->getUrl())
                         ->setLastModificationDate(now())
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
@@ -97,47 +99,47 @@ class SiteMaps
                 );
             }
         });
-        $sitemap_regions->writeToFile(public_path('sitemap/regions-sitemap.xml'));
-        $this->add_styles('sitemap/regions-sitemap.xml');
-        $sitemap_index->add('sitemap/regions-sitemap.xml');
+        $sitemapRegions->writeToFile(public_path('sitemap/regions-sitemap.xml'));
+        self::addStyles('sitemap/regions-sitemap.xml');
+        $sitemapIndex->add('sitemap/regions-sitemap.xml');
 
         $chunk = 0;
-        Movie::chunkById(200, function ($movies) use ($sitemap_index, &$chunk) {
+        Movie::chunkById(200, function ($movies) use ($sitemapIndex, &$chunk) {
             $chunk++;
-            $sitemap_movies = null;
-            $sitemap_movies = Sitemap::create();
+            $sitemapMovies = null;
+            $sitemapMovies = Sitemap::create();
             foreach ($movies as $movie) {
-                $sitemap_movies->add(
+                $sitemapMovies->add(
                     Url::create($movie->getUrl())
                         ->setLastModificationDate($movie->updated_at)
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                         ->setPriority(0.7)
                 );
             }
-            $sitemap_movies->writeToFile(public_path("sitemap/movies-sitemap{$chunk}.xml"));
-            $this->add_styles("sitemap/movies-sitemap{$chunk}.xml");
-            $sitemap_index->add("sitemap/movies-sitemap{$chunk}.xml");
+            $sitemapMovies->writeToFile(public_path("sitemap/movies-sitemap{$chunk}.xml"));
+            self::addStyles("sitemap/movies-sitemap{$chunk}.xml");
+            $sitemapIndex->add("sitemap/movies-sitemap{$chunk}.xml");
         });
         $chunk = 0;
-        Episode::chunkById(200, function ($episodes) use ($sitemap_index, &$chunk) {
+        Episode::chunkById(200, function ($episodes) use ($sitemapIndex, &$chunk) {
             $chunk++;
-            $sitemap_episodes = null;
-            $sitemap_episodes = Sitemap::create();
+            $sitemapEpisodes = null;
+            $sitemapEpisodes = Sitemap::create();
             foreach ($episodes as $episode) {
-                $sitemap_episodes->add(
+                $sitemapEpisodes ->add(
                     Url::create($episode->getUrl())
                         ->setLastModificationDate($episode->updated_at)
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                         ->setPriority(0.7)
                 );
             }
-            $sitemap_episodes->writeToFile(public_path("sitemap/episodes-sitemap{$chunk}.xml"));
-            $this->add_styles("sitemap/episodes-sitemap{$chunk}.xml");
-            $sitemap_index->add("sitemap/episodes-sitemap{$chunk}.xml");
+            $sitemapEpisodes ->writeToFile(public_path("sitemap/episodes-sitemap{$chunk}.xml"));
+            self::addStyles("sitemap/episodes-sitemap{$chunk}.xml");
+            $sitemapIndex->add("sitemap/episodes-sitemap{$chunk}.xml");
         });
 
-        $sitemap_index->writeToFile(public_path('sitemap.xml'));
-        $this->add_styles("sitemap.xml");
+        $sitemapIndex->writeToFile(public_path('sitemap.xml'));
+        self::addStyles("sitemap.xml");
         if($ping == true && $alert == true){
             $status = ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
             Alert::success("Đã tạo thành công sitemap tại thư mục public & ".$status)->flash();

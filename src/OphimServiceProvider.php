@@ -105,6 +105,7 @@ class OphimServiceProvider extends ServiceProvider
             UpdateCommand::class,
             CreateUser::class,
             GenerateMenuCommand::class,
+            SiteMapCommand::class,
         ]);
 
         $this->bootSeoDefaults();
@@ -217,8 +218,10 @@ class OphimServiceProvider extends ServiceProvider
     protected function loadScheduler()
     {
         $schedule = $this->app->make(Schedule::class);
-        
-
+        $schedule->command('anime:sitemap')
+            ->hourly()
+            ->withoutOverlapping()
+            ->runInBackground();
         $schedule->call(function () {
             DB::table('movies')->update(['view_day' => 0]);
         })->daily()->name('Run the task reset view day')->timezone('Asia/Ho_Chi_Minh');
