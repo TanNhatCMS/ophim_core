@@ -218,9 +218,7 @@ class OphimServiceProvider extends ServiceProvider
     {
         $schedule = $this->app->make(Schedule::class);
         
-        $schedule->call(function () {
-            SiteMaps::update_sitemap(true, false);
-        })->hourly()->name('Run the task update sitemap every hour')->timezone('Asia/Ho_Chi_Minh')->runInBackground();
+
         $schedule->call(function () {
             DB::table('movies')->update(['view_day' => 0]);
         })->daily()->name('Run the task reset view day')->timezone('Asia/Ho_Chi_Minh');
