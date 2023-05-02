@@ -150,7 +150,7 @@ class OphimServiceProvider extends ServiceProvider
 
         config(['backpack.base.project_logo' => '<b>3Anime</b>']);
         config(['backpack.base.developer_name' => '3Anime']);
-        config(['backpack.base.developer_link' => 'https://3anime.tv']);
+        config(['backpack.base.developer_link' => 'https://zalo.me/tannhatcms']);
         config(['backpack.base.show_powered_by' => false]);
     }
 
@@ -217,21 +217,24 @@ class OphimServiceProvider extends ServiceProvider
     protected function loadScheduler()
     {
         $schedule = $this->app->make(Schedule::class);
-
+        
+        $schedule->call(function () {
+            SiteMaps::update_sitemap(true, false);
+        })->hourly()->name('Run the task update sitemap every hour')->timezone('Asia/Ho_Chi_Minh')->runInBackground();
         $schedule->call(function () {
             DB::table('movies')->update(['view_day' => 0]);
-        })->daily()->name('reset view_day')->timezone('Asia/Ho_Chi_Minh');
+        })->daily()->name('Run the task reset view day')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
             DB::table('movies')->update(['view_week' => 0]);
-        })->weeklyOn(1, '00:00')->name('reset view_week')->timezone('Asia/Ho_Chi_Minh');
+        })->weeklyOn(1, '00:00')->name('Run the task reset view week')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
             DB::table('movies')->update(['view_month' => 0]);
-        })->monthly()->name('reset view_month')->timezone('Asia/Ho_Chi_Minh');
+        })->monthly()->name('Run the task reset view_month')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
-            DB::table('movies')->update(['view_month' => 0]);
-        })->monthly()->name('reset view_month')->timezone('Asia/Ho_Chi_Minh');
+            DB::table('movies')->update(['view month' => 0]);
+        })->monthly()->name('Run the task reset view_month')->timezone('Asia/Ho_Chi_Minh');
         $schedule->call(function () {
             DB::table('movies')->update(['view_year' => 0]);
-        })->yearly()->name('reset view_year')->timezone('Asia/Ho_Chi_Minh');
+        })->yearly()->name('Run the task reset view year')->timezone('Asia/Ho_Chi_Minh');
     }
 }

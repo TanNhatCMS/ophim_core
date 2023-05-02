@@ -2,10 +2,7 @@
 
 namespace Ophim\Core\Models;
 
-
 use Backpack\Settings\app\Models\Setting;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL as LARURL;
 use Illuminate\Support\Facades\File;
 use Carbon\Carbon;
@@ -14,6 +11,7 @@ use Ophim\Core\Models\Catalog;
 use Ophim\Core\Models\Category;
 use Ophim\Core\Models\Director;
 use Ophim\Core\Models\Movie;
+use Ophim\Core\Models\Episode;
 use Ophim\Core\Models\Region;
 use Ophim\Core\Models\Studio;
 use Ophim\Core\Models\Tag;
@@ -26,7 +24,7 @@ class SiteMaps
 {
 
 
-    public function render_styles()
+    private static function render_styles()
     {
         $xml = view('ophim::sitemap/styles', [
             'title' => Setting::get('site_homepage_title'),
@@ -37,7 +35,7 @@ class SiteMaps
         return;
     }
 
-    public function add_styles($file_name)
+    private static function add_styles($file_name)
     {
         $path = public_path($file_name);
         if(file_exists($path)) {
@@ -47,7 +45,7 @@ class SiteMaps
         }
     }
 
-    public function store(Request $request)
+    public static function update_sitemap($ping = false, $alert = false)
     {
         $this->render_styles();
         if (!File::isDirectory('sitemap')) File::makeDirectory('sitemap', 0777, true, true);
@@ -69,9 +67,9 @@ class SiteMaps
                 );
             }
         });
-        $sitemap_page->writeToFile(public_path('sitemap/page-sitemap.xml'));
-        $this->add_styles('sitemap/page-sitemap.xml');
-        $sitemap_index->add('sitemap/page-sitemap.xml');
+        $sitemap_page->writeToFile(public_path('sitemap/catalogs-sitemap.xml'));
+        $this->add_styles('sitemap/catalogs-sitemap.xml');
+        $sitemap_index->add('sitemap/catalogs-sitemap.xml');
 
         $sitemap_categories = Sitemap::create();
         Category::chunkById(100, function ($categoires) use ($sitemap_categories) {
@@ -120,10 +118,34 @@ class SiteMaps
             $this->add_styles("sitemap/movies-sitemap{$chunk}.xml");
             $sitemap_index->add("sitemap/movies-sitemap{$chunk}.xml");
         });
+        $chunk = 0;
+        Episode::chunkById(200, function ($episodes) use ($sitemap_index, &$chunk) {
+            $chunk++;
+            $sitemap_episodes = null;
+            $sitemap_episodes = Sitemap::create();
+            foreach ($episodes as $episode) {
+                $sitemap_episodes->add(
+                    Url::create($episode->getUrl())
+                        ->setLastModificationDate($episode->updated_at)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                        ->setPriority(0.7)
+                );
+            }
+            $sitemap_episodes->writeToFile(public_path("sitemap/episodes-sitemap{$chunk}.xml"));
+            $this->add_styles("sitemap/episodes-sitemap{$chunk}.xml");
+            $sitemap_index->add("sitemap/episodes-sitemap{$chunk}.xml");
+        });
+
         $sitemap_index->writeToFile(public_path('sitemap.xml'));
         $this->add_styles("sitemap.xml");
-        $status = ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
-        Alert::success("Đã tạo thành công sitemap tại thư mục public & ".$status)->flash();
+        if($ping == true && $alert == true){
+            $status = ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
+            Alert::success("Đã tạo thành công sitemap tại thư mục public & ".$status)->flash();
+        }elseif($ping == false && $alert == true){
+            Alert::success("Đã tạo thành công sitemap tại thư mục public")->flash();
+        }elseif($ping ==true  && $alert == false){
+            return ping_sitemap( url('/sitemap.xml'))."& ".ping_pingomatic( url(""), Setting::get('site_homepage_title'));
+        }
         return;
     }
 }

@@ -611,11 +611,11 @@ class SettingsTableSeeder extends Seeder
                     'name' => 'value',
                     'type' => 'select_from_array',
                     'options' => [
-                        'top-left' => 'Top left',
-                        'top-right' => 'Top right',
-                        'bottom-right' => 'Bottom right',
-                        'bottom-left' => 'Dưới cùng bên trái',
-                        'control-bar' => 'Control bar',
+                        'top-left' => 'Trên trái',
+                        'top-right' => 'Trên phải',
+                        'bottom-right' => 'Dưới phải',
+                        'bottom-left' => 'Dưới trái',
+                        'control-bar' => 'Thanh điều khiển',
                     ],
                     'tab' => 'Trình phát'
                 ]),
@@ -726,10 +726,19 @@ class SettingsTableSeeder extends Seeder
                 'description' => 'hide_ads_boss',
                 'field'       => json_encode([
                     'name' => 'value',
-                    'type' => 'switch',
-                    
+                    'type' => 'switch'
                 ]),
-                'value' => 'default',
+                'active'      => 0,
+            ],
+            [
+                'key'         => 'notifications',
+                'name'        => 'Thông Báo',
+                'description' => 'Thông Báo',
+                'field'       => json_encode([
+                    'name' => 'value',
+                    'type' => 'code',
+                ]),
+                'value' => '',
                 'active'      => 0,
             ],
         ];
