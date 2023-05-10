@@ -174,6 +174,32 @@ class Movie extends Model implements TaxonomyInterface, Cacheable, SeoInterface
             ->setType('Movie')
             ->setDescription($seo_des)
             ->setImages([$movie_thumb_url, $movie_poster_url])
+            ->addValue('review', [
+                '@type' => 'Review',
+                "itemReviewed" =>[
+                   '@type' => 'CreativeWork',
+                   'url' => $getUrl,
+                   'name' => $getTitle,
+                   'reviewBody' => $getDescription,
+                   'author' =>  count($this->actors) ? $this->actors->map(function ($actor) {
+                        return ['@type' => 'Person', 'name' => $actor->name];
+                    }) : "", 
+                   'dateCreated' => $this->created_at,
+                   'reviewRating' => [
+                        '@type' => 'Rating',
+                        'worstRating' => 1,
+                        'ratingValue' => $this->getRatingStar(),
+                        'bestRating' => 10
+                   ]
+                ],
+                'aggregateRating'=> [
+                    '@type' => 'AggregateRating',
+                    'bestRating' => "10",
+                    'worstRating' => "1",
+                    'ratingValue' => $this->getRatingStar(),
+                    'reviewCount' => $this->getRatingCount()
+                ]
+            ])
             ->addValue('aggregateRating', [
                 '@type' => 'AggregateRating',
                 'bestRating' => "10",
