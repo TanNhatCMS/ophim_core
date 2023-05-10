@@ -127,17 +127,17 @@ class Episode extends Model implements Cacheable, HasUrlInterface, SeoInterface
                 '@type' => 'Review',
                 "itemReviewed" =>[
                    '@type' => 'CreativeWork',
-                   'url' => $getUrl,
+                   'url' => $episode_getUrl,
                    'name' => $getTitle,
-                   'reviewBody' => $getDescription,
-                   'author' =>  count($this->actors) ? $this->actors->map(function ($actor) {
+                   'reviewBody' => $movie_description,
+                   'author' =>  count($this->movie->actors) ? $this->movie->actors->map(function ($actor) {
                         return ['@type' => 'Person', 'name' => $actor->name];
                     }) : "", 
                    'dateCreated' => $this->created_at,
                    'reviewRating' => [
                         '@type' => 'Rating',
                         'worstRating' => 1,
-                        'ratingValue' => $this->getRatingStar(),
+                        'ratingValue' => $this->movie->getRatingStar(),
                         'bestRating' => 10
                    ]
                 ],
@@ -145,8 +145,8 @@ class Episode extends Model implements Cacheable, HasUrlInterface, SeoInterface
                     '@type' => 'AggregateRating',
                     'bestRating' => "10",
                     'worstRating' => "1",
-                    'ratingValue' => $this->getRatingStar(),
-                    'reviewCount' => $this->getRatingCount()
+                    'ratingValue' => $this->movie->getRatingStar(),
+                    'reviewCount' => $this->movie->getRatingCount()
                 ]
             ])
             ->addValue('aggregateRating', [
