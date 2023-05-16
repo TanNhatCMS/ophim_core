@@ -180,10 +180,11 @@ class Movie extends Model implements TaxonomyInterface, Cacheable, SeoInterface
                    '@type' => 'Movie',
                    'url' => $getUrl,
                    'name' => $getTitle,
+                   'image' => [$movie_thumb_url, $movie_poster_url],
                    'reviewBody' => $seo_des,
                    'author' =>  count($this->actors) ? $this->actors->map(function ($actor) {
                         return ['@type' => 'Person', 'name' => $actor->name];
-                    }) : "", 
+                    }) : ['@type' => 'Person', 'name' => "3Anime.TV"], 
                    'dateCreated' => $this->created_at,
                    'reviewRating' => [
                         '@type' => 'Rating',
@@ -194,10 +195,12 @@ class Movie extends Model implements TaxonomyInterface, Cacheable, SeoInterface
                 ],
                 'author' =>  count($this->actors) ? $this->actors->map(function ($actor) {
                     return ['@type' => 'Person', 'name' => $actor->name];
-                }) : "", 
+                }) : ['@type' => 'Person', 'name' => "3Anime.TV"], 
                 'reviewBody' => $seo_des,
                 'aggregateRating'=> [
-                    '@type' => 'AggregateRating',
+                    '@type' => 'Movie',
+                    'name' => $getTitle,
+                    'image' => [$movie_thumb_url, $movie_poster_url],
                     'bestRating' => 10,
                     'worstRating' => 1,
                     'ratingValue' => $this->getRatingStar(),
@@ -218,7 +221,7 @@ class Movie extends Model implements TaxonomyInterface, Cacheable, SeoInterface
             }) : "")
             ->addValue('actor', count($this->actors) ? $this->actors->map(function ($actor) {
                 return ['@type' => 'Person', 'name' => $actor->name];
-            }) : "")
+            }) : ['@type' => 'Person', 'name' => "3Anime.TV"])
             ->setUrl($getUrl);
 
         $breadcrumb = [];
