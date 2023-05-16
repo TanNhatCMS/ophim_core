@@ -75,7 +75,9 @@ php artisan ophim:update
 php artisan optimize:clear
 ```
 4. Clear PHP Opcache in server (if enabled)
-
+- Command CMS
+    + `php artisan ophim:menu:generate` : Generate menu
+    + `php artisan ophim:episode:change_domain` : Change episode domain play stream
 # Note
 - Command:
     + Generate menu categories & regions: `php artisan ophim:menu:generate`

@@ -14,6 +14,7 @@ use Ophim\Core\Console\UpdateCommand;
 use Ophim\Core\Console\SetUpCommand;
 use Ophim\Core\Console\GenerateMenuCommand;
 use Ophim\Core\Console\SiteMapCommand;
+use Ophim\Core\Console\ChangeDomainEpisodeCommand;
 use Ophim\Core\Middleware\CKFinderAuth;
 use Ophim\Core\Models\Actor;
 use Ophim\Core\Models\Catalog;
@@ -107,6 +108,7 @@ class OphimServiceProvider extends ServiceProvider
             CreateUser::class,
             GenerateMenuCommand::class,
             SiteMapCommand::class,
+            ChangeDomainEpisodeCommand::class,
         ]);
 
         $this->bootSeoDefaults();
