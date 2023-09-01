@@ -5,7 +5,7 @@
         [
             'type' => 'alert',
             'class' => 'alert alert-dark mb-2 col-12',
-            'heading' => '3Anime CMS',
+            'heading' =>'TANNHATCMS',
             'content' =>
                 'Phiên bản: <span class="text-danger text-break"> V' .
                 config('ophim.version') .
