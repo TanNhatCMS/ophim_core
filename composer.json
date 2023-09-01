@@ -36,5 +36,87 @@
             ]
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "name": "tannhatcms/ophim-core",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/ophim_core.git"
+        },
+        {
+            "name": "tannhatcms/settings",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/AnimeSettings.git"
+        },
+        {
+            "name": "tannhatcms/crud",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/anime-crud.git"
+        },
+        {
+            "name": "tannhatcms/ophim-crawler",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/crawler-ophim.git"
+        },
+        {
+            "name": "tannhatcms/theme-3anime",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/theme-animelaw.git"
+        },
+        {
+            "name": "tannhatcms/theme-animelaw",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/theme-animelaw.git"
+        },
+        {
+            "name": "tannhatcms/notifications",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/notifications.git"
+        },
+        {
+            "name": "tannhatcms/image-resizes",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/image-resizes.git"
+        },
+        {
+            "name": "tannhatcms/pagemanager",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/AnimePage.git"
+        },
+        {
+            "name": "tannhatcms/animepage",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/AnimePage.git"
+        },
+        {
+            "name": "tannhatcms/logmanager",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/AnimeLogManager.git"
+        },
+        {
+            "name": "tannhatcms/filemanager",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/FileManager.git"
+        },
+        {
+            "name": "tannhatcms/ckfinder-laravel-package",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/ckfinder-laravel-package-1.git"
+        },
+        {
+            "name": "tannhatcms/seotools",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/seotools.git"
+        },
+        {
+            "name": "tannhatcms/laravel-sitemap",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/laravel-sitemap.git"
+        },
+        {
+            "name": "tannhatcms/anime-ajax",
+            "type": "vcs",
+            "url": "https://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@github.com/TanNhatCMS/anime-ajax.git"
+        }
+    ]
 }
