@@ -43,7 +43,7 @@ class Theme extends Model implements Cacheable
             return 'Unknown';
         }
 
-        return  \PackageVersions\Versions::getVersion($this->package_name);
+        return  \Composer\InstalledVersions::getVersion($this->package_name);
     }
 
     public function getOptionsAttribute()

@@ -150,7 +150,7 @@ class OphimServiceProvider extends ServiceProvider
             \Backpack\CRUD\app\Http\Middleware\UseBackpackAuthGuardInsteadOfDefaultAuthGuard::class,
         ])]);
 
-        config(['cachebusting_string' => \PackageVersions\Versions::getVersion('tannhatcms/crud')]);
+        config(['cachebusting_string' => \Composer\InstalledVersions::getVersion('tannhatcms/crud')]);
 
         config(['backpack.base.project_logo' => '<b>3Anime</b>']);
         config(['backpack.base.developer_name' => '3Anime']);

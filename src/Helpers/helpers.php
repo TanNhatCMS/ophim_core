@@ -36,7 +36,7 @@ if (!function_exists('get_theme_version')) {
         if (!\Composer\InstalledVersions::isInstalled(get_theme_info('package_name'))) {
             return 'Unknown';
         }
-        return  explode('@', \PackageVersions\Versions::getVersion(get_theme_info('package_name')) ?? 0)[0];
+        return  explode('@', \Composer\InstalledVersions::getVersion(get_theme_info('package_name')) ?? 0)[0];
     }
 }
 if (!function_exists('get_crud_version')) {
@@ -45,7 +45,7 @@ if (!function_exists('get_crud_version')) {
         if (!\Composer\InstalledVersions::isInstalled('tannhatcms/crud')) {
             return 'Unknown';
         }
-        return  explode('@', \PackageVersions\Versions::getVersion('tannhatcms/crud') ?? 0)[0];
+        return  explode('@', \Composer\InstalledVersions::getVersion('tannhatcms/crud') ?? 0)[0];
     }
 }
 if (!function_exists('CheckPermission')) {
