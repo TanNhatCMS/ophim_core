@@ -209,7 +209,8 @@ class MovieCrudController extends CrudController
             
             'view' => 'ophim::movies.columns.column_movie_info',
             'searchLogic' => function ($query, $column, $searchTerm) {
-                $query->whereRaw("MATCH(name, origin_name) AGAINST(? IN BOOLEAN MODE)", [$searchTerm]);
+                $query->where('name', 'like', '%' . $searchTerm . '%')->orWhere('origin_name', 'like', '%' . $searchTerm . '%');
+                // $query->whereRaw("MATCH(name, origin_name) AGAINST(? IN BOOLEAN MODE)", [$searchTerm]);
             }
         ]);
         CRUD::addColumn(['name' => 'view_total', 'label' => 'Lượt xem', 'type' => 'number',]);
